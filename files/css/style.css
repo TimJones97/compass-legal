@@ -1,0 +1,196 @@
+/*--------------GENERAL STYLES--------------*/
+
+body {
+	background: #fff;
+	overflow-x: hidden;
+}
+*:focus,
+*:hover {
+	outline: none !important;
+}
+h1, h2, h3, h4 {
+	font-family: 'Oswald', sans-serif;
+}
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+@font-face {
+    font-family: 'LondonTwo';
+    src: url('../fonts/LondonTwo.woff2') format('woff2'),
+        url('../fonts/LondonTwo.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/*-----NAVBAR-----*/
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: transparent;
+	height: 150px;
+	width: 100%;
+	z-index: 999;
+	display: none;
+}
+.navbar,
+.navbar * {
+	transition: all 0.5s ease;
+}
+.navbar .container-wrap {
+	display: flex;
+	max-width: 1800px;
+	width: 100%;
+	margin: 0 auto;
+	flex-flow: row nowrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+.container-wrap {
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 40px 40px;
+	position: relative;
+}
+.navbar-brand {
+	width: 400px;
+}
+.navbar-brand img {
+	width: 100%;
+}
+.navbar-expand-md .navbar-collapse {
+	justify-content: flex-end;
+}
+.nav-link {
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+/*-----SMALL NAV STYLES-----*/
+
+.navbar.small {
+	background: #fff;
+	height: 110px;
+}
+.navbar.small .navbar-brand {
+	width: 380px;
+}
+.navbar.small .nav-link {
+	color: #000;
+}
+/*----------------MAIN STYLES----------------*/
+
+main {
+	width: 100%;
+	height: 80vh;
+}
+.parallax-window {
+	height: 80vh;
+    background: transparent;
+    position: relative;
+}
+.parallax-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #e21c2b;
+	opacity: 0.9;
+}
+.parallax-window h1 {
+	position: absolute;
+	top: 50%;
+	transform: translate(0%, -50%);
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	color: #fff;
+	font-size: 3vw;
+}
+
+/*----------------ABOUT STYLES----------------*/
+
+section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+.about {
+	background: #fff;
+	display: flex;
+	justify-content: flex-start;
+}
+.about h1 {
+	font-size: 40px;
+}
+.about .container-wrap hr {
+    border-top: 5px solid rgb(215 33 46);
+    width: 30px;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.about .container-wrap .left-text {
+	margin: unset;
+	width: 500px;
+}
+
+/*-------CONTACT SIDEBAR-------*/
+
+.contact-details {
+	position: absolute;
+	/*right: 20px;*/
+	top: 40px;
+	right: 0;
+	height: auto;
+	width: 400px;
+	background: #fff;    
+	border: 1px solid #dce5f0;
+    border-radius: .25rem;
+    padding: 20px 40px;
+}
+.contact-item {
+	width: 100%;
+	margin: 0 auto;
+}
+.contact-item dl {
+	padding-left: 30px;
+}
+.contact-item.parking dd {
+	margin-left: -25px;
+}
+.contact-item dt {
+	position: relative;
+	color: #d9232f;
+	margin-bottom: 5px;
+}
+.contact-item dt i {
+	position: absolute;
+	left: -25px;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.contact-item dd a {
+	color: #555;
+}
+/*Hours*/
+.contact-item table {
+	margin-left: 5px;
+}
+
+/*MAP*/
+
+#map {
+    height: 100%;
+}
