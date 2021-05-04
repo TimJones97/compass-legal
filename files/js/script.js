@@ -43,5 +43,8 @@ $(window).resize(function(){
 $(document).ready(function(){
 	smallNavOnScroll();
 	toggleMobileNav();
+	new universalParallax().init({
+	  speed: 2.0
+	});
 	$('.parallax-window').parallax();
 });
