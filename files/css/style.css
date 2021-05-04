@@ -20,7 +20,13 @@ p {
 	font-weight: 500;
 	font-size: 16px;
 }
-
+main, section {
+	transition: all 0.5s ease;
+}
+/*Blur class for main + section when mobile-nav is open*/
+.blur {
+	filter: blur(5px);
+}
 @font-face {
     font-family: 'LondonTwo';
     src: url('../fonts/LondonTwo.woff2') format('woff2'),
@@ -301,6 +307,7 @@ main {
   opacity: 1;
   transition: height 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
 }
+
 /*----------------ABOUT SECTION----------------*/
 
 section {

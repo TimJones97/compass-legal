@@ -21,18 +21,22 @@ function toggleMobileNav(){
 	$('.menu-toggle').click(function(e){
 		e.preventDefault();
 		$('.mobile-nav').addClass('open');
+		if(!isMobile()){
+			$('section').addClass('blur');
+			$('main').addClass('blur');
+		}
 	});
 	$('.close').click(function(e){
 		e.preventDefault();
+		$('section').removeClass('blur');
+		$('main').removeClass('blur');
 		$('.mobile-nav').removeClass('open');
 	});
-	// $(document).click(function(event){
-	//     if(event.target != $('.mobile-nav')[0]) {
-	// 		if($('.mobile-nav').hasClass('open')){
-	// 			$('.mobile-nav').removeClass('open');
-	// 		}
-	//     }
-	// });
+	$('.body-overlay').click(function(){
+		$('.mobile-nav').removeClass('open');
+		$('section').removeClass('blur');
+		$('main').removeClass('blur');
+	});
 }
 function isMobile(){
 	if($(window).width() < 767){
@@ -43,9 +47,10 @@ function isMobile(){
 	}
 }
 $(window).resize(function(){
-	if(!isMobile()){
-		$('.mobile-nav').removeClass('open');
-	}
+	// Remove styles that may have been applied on mobile/desktop
+	$('section').removeClass('blur');
+	$('main').removeClass('blur');
+	$('.mobile-nav').removeClass('open');
 });
 $(document).ready(function(){
 	smallNavOnScroll();
