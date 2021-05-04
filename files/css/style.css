@@ -478,6 +478,7 @@ section {
 }
 .steps {
 	display: flex;
+	justify-content: space-around;
 }
 .steps .connector-line {
 	height: 100%;
@@ -497,7 +498,6 @@ section {
 	border-radius: 10px;
 	border: 1px solid transparent;
 	z-index: 1;
-	margin-right: 2%;
 }
 .steps .step:hover {
 	border: 1px solid #acacac;
