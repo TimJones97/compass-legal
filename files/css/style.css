@@ -199,7 +199,7 @@ main, section {
 .mobile-nav.open {
 	right: 0;
 }
-.mobile-nav .close {
+.mobile-nav .close-btn {
 	width: 20px;
 	height: 20px;
 	position: fixed;
@@ -209,15 +209,44 @@ main, section {
 	pointer-events: none;
 	transition: opacity 0.3s ease;
 }
-.mobile-nav .close:hover {
+.mobile-nav .close-btn:hover {
 	opacity: 0 !important;
 }
-.mobile-nav.open .close {
+.mobile-nav.open .close-btn {
 	opacity: 1;
 	pointer-events: all;
 }
-.mobile-nav.open .close:hover {
+.mobile-nav.open .close-btn:hover {
 	opacity: 0.75 !important;;
+}
+.mobile-nav .logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	position: absolute;
+	top: 45px;
+	left: 35px;
+}
+.mobile-nav .logo:hover {
+	text-decoration: none;
+}
+.mobile-nav .logo img {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-right: 10px;
+}
+.mobile-nav .logo p,
+.mobile-nav .logo p span {
+	display: inline-block;
+	color: #000;
+	font-size: 25px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin: 0;
+}
+.mobile-nav .logo p span {
+	font-weight: 500;
 }
 .mobile-nav .vertical-align {
 	position: absolute;
@@ -343,16 +372,20 @@ section {
 }
 .objectives .objectives-container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: nowrap;
 }
 .objectives .objectives-container .card {
 	width: 49%;
+	margin-right: 1%;
 	background: rgba(0,0,0,.2);
 	transition: all 0.5s ease;
 	padding: 40px;
 	border-radius: 10px;
 	border: 1px solid transparent;
+}
+.objectives .objectives-container .card:last-of-type {
+	margin-right: 0%;
 }
 .objectives .objectives-container .card ul {
 	padding-inline-start: 0px;
@@ -411,6 +444,7 @@ section {
 	z-index: 1;
 	display: flex;
 	align-items: center;
+	padding: 0px 10px;
 }
 .services .container-wrap .service-boxes .service p {
 	font-size: 16px;
@@ -456,14 +490,15 @@ section {
 	border-top: 1px solid #acacac;
 }
 .steps .step {
-	width: 32.3333%;
+	position: relative;
+	width: 31.3333%;
 	background: rgba(0,0,0,.2);
 	transition: all 0.5s ease;
 	padding: 40px;
 	border-radius: 10px;
 	border: 1px solid transparent;
 	z-index: 1;
-	margin-right: 1%;
+	margin-right: 2%;
 }
 .steps .step:hover {
 	border: 1px solid #acacac;
@@ -477,9 +512,11 @@ section {
 	margin-right: unset;
 }
 .steps .step span {
-	display: block;
-	width: 60px;
-	height: 60px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 	border: 1px solid #d7212e;
 	text-align: center;
@@ -488,20 +525,20 @@ section {
 	justify-content: center;
 	margin: 0 auto;
 	font-weight: 700;
+	font-size: 12px;
+	color: #e7e7e7;
 }
 .steps .step p.step-title {
 	font-weight: 700;
-	text-align: center;
 	margin-top: 20px;
 }
 .steps .step p {
 	font-weight: 500;
-	text-align: center;
 }
 .call-btn {
 	display: block;
 	margin: 0 auto;
-	border: 1px solid #fff;
+	border: 1px solid #9b9b9b;
 	background: transparent;
 	margin-top: 20px;
 	font-family: 'Montserrat', sans-serif;
@@ -642,6 +679,7 @@ footer .footer-links a:hover {
 		height: 20px;
 		left: 2px;
 	}
+	.logo p, .logo p span,
 	.navbar-brand p, .navbar-brand p span {
 		font-size: 20px;
 	}
@@ -650,7 +688,7 @@ footer .footer-links a:hover {
 		width: 100%;
 		right: calc(-100% - 5px);
 	}
-	.mobile-nav .close {
+	.mobile-nav .close-btn {
 	    top: 45px;
 	    right: 40px;
 	}
@@ -673,6 +711,14 @@ footer .footer-links a:hover {
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
 	    width: 49%;
+	}
+	/*GET STARTED SECTION*/
+	.steps {
+		flex-direction: column;
+	}
+	.steps .step {
+		width: 100%;
+		margin-bottom: 15px;
 	}
 	/*CONTACT SECTION*/
 	.contact .contact-container {

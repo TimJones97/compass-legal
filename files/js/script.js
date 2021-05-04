@@ -24,18 +24,21 @@ function toggleMobileNav(){
 		if(!isMobile()){
 			$('section').addClass('blur');
 			$('main').addClass('blur');
+			$('nav').addClass('blur');
 		}
 	});
-	$('.close').click(function(e){
+	$('.close-btn').click(function(e){
 		e.preventDefault();
 		$('section').removeClass('blur');
 		$('main').removeClass('blur');
+		$('nav').removeClass('blur');
 		$('.mobile-nav').removeClass('open');
 	});
 	$('.body-overlay').click(function(){
 		$('.mobile-nav').removeClass('open');
 		$('section').removeClass('blur');
 		$('main').removeClass('blur');
+		$('nav').removeClass('blur');
 	});
 }
 function isMobile(){
@@ -50,6 +53,7 @@ $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	$('section').removeClass('blur');
 	$('main').removeClass('blur');
+	$('nav').removeClass('blur');
 	$('.mobile-nav').removeClass('open');
 });
 $(document).ready(function(){
