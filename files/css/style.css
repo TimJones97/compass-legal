@@ -231,8 +231,8 @@ main, section {
 	text-decoration: none;
 }
 .mobile-nav .logo img {
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
 	display: inline-block;
 	margin-right: 10px;
 }
@@ -674,12 +674,13 @@ footer .footer-links a:hover {
 	.navbar .container-wrap {
 		padding: 0px 20px 0px 30px;
 	}
+	.mobile-nav .logo img,
 	.navbar-brand img {
 		width: 20px;
 		height: 20px;
 		left: 2px;
 	}
-	.logo p, .logo p span,
+	.mobile-nav .logo p, .mobile-nav .logo p span,
 	.navbar-brand p, .navbar-brand p span {
 		font-size: 20px;
 	}
