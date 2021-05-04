@@ -597,6 +597,7 @@ section {
 	margin-left: -25px;
 }
 .contact-item dt {
+	font-weight: 700;
 	position: relative;
 	color: #d9232f;
 	margin-bottom: 5px;
