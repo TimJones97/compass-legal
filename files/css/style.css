@@ -222,25 +222,17 @@ p {
 .mobile-nav .nav-link {
 	color: #000;
 }
-.mobile-nav .contact-details {
-	width: calc(100% - 80px);
-	margin: 0 auto;
-	background: rgba(0,0,0,.85);
+
+.mobile-nav .contact-item {
+	padding-left: 30px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
 }
-.mobile-nav .contact-details * {
-	transition: none !important;
+.mobile-nav .contact-item a {
+	color: #000;
 }
-.mobile-nav .contact-details p,
-.mobile-nav .contact-item dt i,
-.mobile-nav .contact-details td,
-.mobile-nav .contact-details dd {
-	color: #fff;
-}
-.mobile-nav .contact-details hr {
-	border-top: 1px solid #fff;
-}
-.mobile-nav .contact-item.mobile-only {
-	display: none;
+.mobile-nav .contact-item dt i {
+	color: #3b3b3b;
 }
 /*----------------MAIN SECTION----------------*/
 
@@ -515,18 +507,6 @@ section {
 	}
 	.mobile-nav .contact-details {
 		display: none;
-	}
-	.mobile-nav .contact-item.mobile-only {
-		display: block;
-		padding-left: 30px;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-	}
-	.mobile-nav .contact-item.mobile-only a {
-		color: #000;
-	}
-	.mobile-nav .contact-item.mobile-only dt i {
-		color: #3b3b3b;
 	}
 	/*MAIN SECTION STYLES*/
 	.parallax-window h1 {

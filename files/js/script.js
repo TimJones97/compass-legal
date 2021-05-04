@@ -1,7 +1,7 @@
 function smallNavOnScroll(){
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
-	if(scrollTop > 5 || $(window).width() < 767){
+	if(scrollTop > 5 || isMobile()){
 		$('.navbar').addClass('small');
 	}
 	else {
@@ -9,7 +9,7 @@ function smallNavOnScroll(){
 	}
 	$(window).scroll(function(){
 		var scrollTop = $(document).scrollTop();
-		if(scrollTop > 5 || $(window).width() < 767){
+		if(scrollTop > 5 || isMobile()){
 			$('.navbar').addClass('small');
 		}
 		else {
@@ -27,6 +27,19 @@ function toggleMobileNav(){
 		$('.mobile-nav').removeClass('open');
 	});
 }
+function isMobile(){
+	if($(window).width() < 767){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+$(window).resize(function(){
+	if(!isMobile()){
+		$('.mobile-nav').removeClass('open');
+	}
+});
 $(document).ready(function(){
 	smallNavOnScroll();
 	toggleMobileNav();
