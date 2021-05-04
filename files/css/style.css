@@ -3,7 +3,10 @@
 body {
 	background: #fff;
 	overflow-x: hidden;
-	user-select: none;
+}
+*::selection {
+  background: #d7212e;
+  color: #fff;
 }
 *:focus,
 *:hover {
