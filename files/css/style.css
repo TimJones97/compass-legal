@@ -202,7 +202,7 @@ p {
 	pointer-events: all;
 }
 .mobile-nav.open .close:hover {
-	opacity: 0.75;
+	opacity: 0.75 !important;;
 }
 .mobile-nav .vertical-align {
 	position: absolute;
