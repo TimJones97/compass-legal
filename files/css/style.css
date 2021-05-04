@@ -362,6 +362,7 @@ section {
 }
 .objectives .objectives-container .card:hover {
 	border: 1px solid #acacac;
+    border-top: 1px solid rgb(215 33 46);
 	transform: scale3d(1.02, 1.02, 1);
 }
 /*----------------SERVICES SECTION----------------*/
