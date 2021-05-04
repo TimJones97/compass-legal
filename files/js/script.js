@@ -49,6 +49,11 @@ function isMobile(){
 		return false;
 	}
 }
+function preventDefaultOnClick(){
+	$('a').click(function(e){
+		e.preventDefault();
+	})
+}
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	$('section').removeClass('blur');
@@ -59,6 +64,7 @@ $(window).resize(function(){
 $(document).ready(function(){
 	smallNavOnScroll();
 	toggleMobileNav();
+	preventDefaultOnClick();
 	new universalParallax().init({
 	  speed: 2.0
 	});
