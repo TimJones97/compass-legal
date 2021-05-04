@@ -26,6 +26,13 @@ function toggleMobileNav(){
 		e.preventDefault();
 		$('.mobile-nav').removeClass('open');
 	});
+	// $(document).click(function(event){
+	//     if(event.target != $('.mobile-nav')[0]) {
+	// 		if($('.mobile-nav').hasClass('open')){
+	// 			$('.mobile-nav').removeClass('open');
+	// 		}
+	//     }
+	// });
 }
 function isMobile(){
 	if($(window).width() < 767){
@@ -46,5 +53,4 @@ $(document).ready(function(){
 	new universalParallax().init({
 	  speed: 2.0
 	});
-	$('.parallax-window').parallax();
 });
