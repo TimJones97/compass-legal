@@ -63,7 +63,7 @@ main, section {
 	padding: 40px 40px 40px 60px;
 }
 .container-wrap {
-	max-width: 960px;
+	max-width: 1080px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 40px 40px;
@@ -352,6 +352,7 @@ section {
 	transition: all 0.5s ease;
 	padding: 40px;
 	border-radius: 10px;
+	border: 1px solid transparent;
 }
 .objectives .objectives-container .card ul {
 	padding-inline-start: 0px;
@@ -434,6 +435,88 @@ section {
 	transform: scale3d(1.05, 1.05, 1);
 }
 
+/*----------------GET STARTED SECTION----------------*/
+
+.get-started {
+	background: #1b1b1b;
+}
+.get-started * {
+	color: #fff;
+}
+.steps {
+	display: flex;
+}
+.steps .connector-line {
+	height: 100%;
+	align-content: center;
+	width: 10px;
+	z-index: 0;
+}
+.steps .connector-line hr {
+	border-top: 1px solid #acacac;
+}
+.steps .step {
+	width: 32.3333%;
+	background: rgba(0,0,0,.2);
+	transition: all 0.5s ease;
+	padding: 40px;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	z-index: 1;
+	margin-right: 1%;
+}
+.steps .step:hover {
+	border: 1px solid #acacac;
+    border-top: 1px solid rgb(215 33 46);
+	transform: scale3d(1.02, 1.02, 1);
+}
+.steps .step * {
+	font-family: 'Montserrat', sans-serif;
+}
+.steps .step:last-of-type {
+	margin-right: unset;
+}
+.steps .step span {
+	display: block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 1px solid #d7212e;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	font-weight: 700;
+}
+.steps .step p.step-title {
+	font-weight: 700;
+	text-align: center;
+	margin-top: 20px;
+}
+.steps .step p {
+	font-weight: 500;
+	text-align: center;
+}
+.call-btn {
+	display: block;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	background: transparent;
+	margin-top: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	border-radius: 10px;
+	padding: 10px 20px;
+	color: #d7212e;
+	transition: background 0.5s ease;
+}
+.call-btn:hover {
+	background: rgba(0,0,0,.2);
+}
+.btn-anchor:hover {
+	text-decoration: none;
+}
 /*----------------CONTACT SECTION----------------*/
 
 /*MAP*/
@@ -441,13 +524,11 @@ section {
 #map {
     width: 49%;
     border-radius: 10px;
+    border: 1px solid #acacac;
 }
 .contact {
-	background: #1b1b1b;
+	background: #fff;
 	border-bottom: unset;
-}
-.contact * {
-	color: #fff;
 }
 .contact .contact-container {
 	display: flex;
@@ -457,13 +538,17 @@ section {
     height: 100%;
 	width: 49%;
 	height: auto;
-	background: rgba(0,0,0,.2);
+	background: rgba(0,0,0,0.85);
     border-radius: 10px;
     padding: 20px 40px;
 }
 .contact-details * {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
+	color: #fff;
+}
+.contact-details hr {
+	border-top: 1px solid #acacac;
 }
 .contact-item {
 	width: 100%;
@@ -492,6 +577,29 @@ section {
 /*Hours*/
 .contact-item table {
 	margin-left: 5px;
+}
+/*----------------FOOTER SECTION----------------*/
+footer {
+	background: #1b1b1b;
+}
+footer * {
+	color: #9b9b9b;
+}
+footer .container-wrap {
+	overflow: hidden;
+}
+footer .footer-links {
+	float: left;
+	margin-right: 30px;
+}
+footer .footer-links a {
+	display: block;
+	transition: all 0.5s ease;
+	margin-bottom: 5px;
+}
+footer .footer-links a:hover {
+	color: #e7e7e7;
+	text-decoration: none;
 }
 
 /*------------MEDIA QUERIES-----------*/
