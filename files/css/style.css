@@ -144,6 +144,7 @@ p {
 	height: 110px;
 	font-size: inherit;
     font-weight: inherit;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 75%);
 }
 .navbar.small .navbar-brand {
 	width: 380px;
@@ -170,7 +171,7 @@ p {
 .mobile-nav {
 	position: fixed;
 	top: 0;
-	right: -500px;
+	right: -505px;
 	height: 100vh;
 	width: 500px;
 	background: #fff;
@@ -178,6 +179,7 @@ p {
 	flex-direction: column;
 	transition: right 0.3s ease-in-out;
 	z-index: 999;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 75%);
 }
 .mobile-nav.open {
 	right: 0;
@@ -236,6 +238,9 @@ p {
 }
 .mobile-nav .contact-details hr {
 	border-top: 1px solid #fff;
+}
+.mobile-nav .contact-item.mobile-only {
+	display: none;
 }
 /*----------------MAIN SECTION----------------*/
 
@@ -349,9 +354,9 @@ section {
 	justify-content: space-between;
 }
 .services .container-wrap .service-boxes .service {
+	position: relative;
 	width: 32.33333%;
 	margin-bottom: 1%;
-	background: rgba(0,0,0,.7);
 	border: 1px solid transparent;
 	transition: all 0.5s ease;
 	text-align: center;
@@ -360,30 +365,18 @@ section {
 	display: flex;
 	align-items: center;
 	height: 120px;
+	overflow: hidden;
 }
-.services .container-wrap .service-boxes .service:nth-child(1) {
-	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('../img/home-page/services/criminal.jpg') ;
-	background-size: cover;
-}
-.services .container-wrap .service-boxes .service:nth-child(2) {
-	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('../img/home-page/services/family.jpg') ;
-	background-size: cover;
-}
-.services .container-wrap .service-boxes .service:nth-child(3) {
-	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('../img/home-page/services/domestic.jpg') ;
-	background-size: cover;
-}
-.services .container-wrap .service-boxes .service:nth-child(4) {
-	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('../img/home-page/services/child.jpg') ;
-	background-size: cover;
-}
-.services .container-wrap .service-boxes .service:nth-child(5) {
-	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('../img/home-page/services/conveyancing.jpg') ;
-	background-size: cover;
-}
-.services .container-wrap .service-boxes .service:nth-child(6) {
-	background: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url('../img/home-page/services/will.jpg') ;
-	background-size: cover;
+.services .container-wrap .service-boxes .service .text-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	z-index: 1;
+	display: flex;
+	align-items: center;
 }
 .services .container-wrap .service-boxes .service p {
 	font-size: 16px;
@@ -391,9 +384,21 @@ section {
 	color: #fff;
 	width: 100%;
 }
+.services .container-wrap .service-boxes .service img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	transition: all 0.5s ease;
+}
 .services .container-wrap .service-boxes .service:hover {
 	border: 1px solid #3b3b3b;
-	transform: scale3d(1.02, 1.02, 1);
+	transform: scale3d(1.03, 1.03, 1);
+}
+.services .container-wrap .service-boxes .service:hover img {
+	transform: scale3d(1.05, 1.05, 1);
 }
 
 /*----------------CONTACT SECTION----------------*/
@@ -422,6 +427,10 @@ section {
 	background: rgba(0,0,0,.2);
     border-radius: 10px;
     padding: 20px 40px;
+}
+.contact-details * {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
 }
 .contact-item {
 	width: 100%;
@@ -498,7 +507,7 @@ section {
 	/*MOBILE NAV STYLES*/
 	.mobile-nav {
 		width: 100%;
-		right: -100%;
+		right: calc(-100% - 5px);
 	}
 	.mobile-nav .close {
 	    top: 45px;
@@ -507,9 +516,11 @@ section {
 	.mobile-nav .contact-details {
 		display: none;
 	}
-	.mobile-only {
+	.mobile-nav .contact-item.mobile-only {
 		display: block;
 		padding-left: 30px;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 500;
 	}
 	.mobile-nav .contact-item.mobile-only a {
 		color: #000;
