@@ -370,9 +370,6 @@ section {
 .services {
 	background: #fff;
 }
-.services * {
-
-}
 .services .container-wrap .service-boxes {
 	display: flex;
 	flex-wrap: wrap;
@@ -391,6 +388,7 @@ section {
 	align-items: center;
 	height: 120px;
 	overflow: hidden;
+	cursor: pointer;
 }
 .services .container-wrap .service-boxes .service .text-overlay {
 	position: absolute;
