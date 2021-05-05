@@ -344,10 +344,9 @@ main {
 section {
 	position: relative;
 	width: 100%;
-    border-bottom: 3px solid rgb(215 33 46);
+    border-top: 3px solid #9b9b9b;
 }
 .about {
-    border-top: 3px solid rgb(215 33 46);
 	background: #fff;
 }
 .heading-container {
@@ -620,6 +619,7 @@ section {
 /*----------------FOOTER SECTION----------------*/
 footer {
 	background: #1b1b1b;
+    border-top: 3px solid #9b9b9b;
 }
 footer * {
 	color: #9b9b9b;
