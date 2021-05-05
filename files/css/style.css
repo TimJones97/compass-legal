@@ -382,7 +382,7 @@ section {
 	transition: all 0.5s ease;
 	padding: 40px;
 	border-radius: 10px;
-	border: 1px solid transparent;
+	border: 2px solid transparent;
 }
 .objectives .objectives-container .card:last-of-type {
 	margin-right: 0%;
@@ -405,8 +405,8 @@ section {
 	font-weight: 500;
 }
 .objectives .objectives-container .card:hover {
-	border: 1px solid #acacac;
-    border-top: 1px solid rgb(215 33 46);
+	border: 2px solid #acacac;
+    border-top: 2px solid rgb(215 33 46);
 	transform: scale3d(1.02, 1.02, 1);
 }
 /*----------------SERVICES SECTION----------------*/
@@ -481,15 +481,6 @@ section {
 	display: flex;
 	justify-content: space-around;
 }
-.steps .connector-line {
-	height: 100%;
-	align-content: center;
-	width: 10px;
-	z-index: 0;
-}
-.steps .connector-line hr {
-	border-top: 1px solid #acacac;
-}
 .steps .step {
 	position: relative;
 	width: 31.3333%;
@@ -497,12 +488,12 @@ section {
 	transition: all 0.5s ease;
 	padding: 40px;
 	border-radius: 10px;
-	border: 1px solid transparent;
+	border: 2px solid transparent;
 	z-index: 1;
 }
 .steps .step:hover {
-	border: 1px solid #acacac;
-    border-top: 1px solid rgb(215 33 46);
+	border: 2px solid #acacac;
+    border-top: 2px solid rgb(215 33 46);
 	transform: scale3d(1.02, 1.02, 1);
 }
 .steps .step * {
@@ -518,7 +509,7 @@ section {
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-	border: 1px solid #d7212e;
+	border: 2px solid #d7212e;
 	text-align: center;
 	display: flex;
 	align-items: center;
