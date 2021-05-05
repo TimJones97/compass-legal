@@ -266,6 +266,7 @@ main, section {
 }
 .mobile-nav .nav-link {
 	color: #000;
+	transition: all 0.5s ease;
 }
 .mobile-nav .nav-link:hover {
 	color: #d7212e;
