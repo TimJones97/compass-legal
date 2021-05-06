@@ -15,7 +15,7 @@ body {
 h1, h2, h3, h4 {
 	font-family: 'Oswald', sans-serif;
 }
-p {
+p, a {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
@@ -621,6 +621,10 @@ footer .container-wrap {
 footer .footer-links {
 	float: left;
 	margin-right: 30px;
+}
+footer p {
+	font-size: 18px;
+	color: #cecece;
 }
 footer .footer-links a {
 	display: block;
