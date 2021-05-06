@@ -2,18 +2,18 @@ function smallNavOnScroll(){
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
 	if(scrollTop > 5 || isMobile()){
-		$('.navbar').addClass('small');
+		$('.navbar').addClass('opaque');
 	}
 	else {
-		$('.navbar').removeClass('small');
+		$('.navbar').removeClass('opaque');
 	}
 	$(window).scroll(function(){
 		var scrollTop = $(document).scrollTop();
 		if(scrollTop > 5 || isMobile()){
-			$('.navbar').addClass('small');
+			$('.navbar').addClass('opaque');
 		}
 		else {
-			$('.navbar').removeClass('small');
+			$('.navbar').removeClass('opaque');
 		}
 	});
 }

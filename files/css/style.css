@@ -44,7 +44,7 @@ main, section {
 	top: 0;
 	left: 0;
 	background: transparent;
-	height: 150px;
+	height: 110px;
 	width: 100%;
 	z-index: 999;
 }
@@ -150,35 +150,34 @@ main, section {
 .menu-toggle:hover .nav-button .bar:last-of-type {
     width: 30px;
 }
-/*-----SMALL NAV STYLES-----*/
+/*-----OPAQUE NAV STYLES-----*/
 
-.navbar.small {
+.navbar.opaque {
 	background: #fff;
-	height: 110px;
 	font-size: inherit;
     font-weight: inherit;
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 75%);
 }
-.navbar.small .navbar-brand {
+.navbar.opaque .navbar-brand {
 	width: 380px;
 }
-.navbar.small .nav-link {
+.navbar.opaque .nav-link {
 	color: #000;
 }
-.navbar.small .nav-link:hover {
+.navbar.opaque .nav-link:hover {
 	color: #d7212e;
 }
-.navbar.small .navbar-brand p,
-.navbar.small .navbar-brand p span {
+.navbar.opaque .navbar-brand p,
+.navbar.opaque .navbar-brand p span {
 	color: #000;
 }
-.navbar.small .navbar-brand img.logo-black {
+.navbar.opaque .navbar-brand img.logo-black {
 	opacity: 1;
 }
-.navbar.small .navbar-brand img.logo-white {
+.navbar.opaque .navbar-brand img.logo-white {
 	opacity: 0;
 }
-.navbar.small .nav-button .bar {
+.navbar.opaque .nav-button .bar {
     background: #000;
 }
 
