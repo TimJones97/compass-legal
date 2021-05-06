@@ -666,13 +666,13 @@ footer .footer-links a:hover {
 	}
 	/*NAVBAR STYLES*/
 	.navbar .container-wrap {
-		padding: 0px 20px 0px 30px;
+		padding: 0px 5px 0px 35px;
 	}
 	.mobile-nav .logo img,
 	.navbar-brand img {
 		width: 20px;
 		height: 20px;
-		left: 2px;
+		left: 7px;
 	}
 	.mobile-nav .logo p, .mobile-nav .logo p span,
 	.navbar-brand p, .navbar-brand p span {
@@ -693,6 +693,8 @@ footer .footer-links a:hover {
 	/*MAIN SECTION STYLES*/
 	.parallax-window h1 {
 	    text-align: left;
+	    width: calc(100% - 40px);
+	    font-size: 40px;
 	}
 	/*OBJECTIVES SECTION*/
 	.objectives .objectives-container {
