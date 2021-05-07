@@ -54,6 +54,10 @@ function preventDefaultOnClick(){
 		e.preventDefault();
 	})
 }
+function setCopyrightYear(){
+	var theDate = new Date(); 
+	$(".year").text(theDate.getFullYear());
+}
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	$('section').removeClass('blur');
