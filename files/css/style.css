@@ -479,17 +479,21 @@ section {
 }
 .steps {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 .steps .step {
 	position: relative;
-	width: 31.3333%;
+	width: 32%;
+	margin-right: 1.6666%;
 	background: rgba(0,0,0,.2);
 	transition: all 0.5s ease;
 	padding: 40px;
 	border-radius: 10px;
 	border: 2px solid transparent;
 	z-index: 1;
+}
+.steps .step:last-of-type {
+	margin-right: 0%;
 }
 .steps .step:hover {
 	border: 2px solid #acacac;
