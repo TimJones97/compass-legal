@@ -430,9 +430,10 @@ section {
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
-	height: 120px;
+	height: 140px;
 	overflow: hidden;
 	cursor: pointer;
+	transform: perspective(999px);
 }
 .services .container-wrap .service-boxes .service .text-overlay {
 	position: absolute;
@@ -440,7 +441,7 @@ section {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.7);
+	background: rgba(0,0,0,0.5);
 	z-index: 1;
 	display: flex;
 	align-items: center;
@@ -460,13 +461,14 @@ section {
 	left: 0;
 	z-index: 0;
 	transition: all 0.5s ease;
+	transform: perspective(999px);
 }
 .services .container-wrap .service-boxes .service:hover {
 	border: 1px solid #3b3b3b;
-	transform: scale3d(1.03, 1.03, 1);
+	transform: scale3d(1.03, 1.03, 1) perspective(999px);
 }
 .services .container-wrap .service-boxes .service:hover img {
-	transform: scale3d(1.05, 1.05, 1);
+	transform: scale3d(1.05, 1.05, 1) perspective(999px);
 }
 
 /*----------------GET STARTED SECTION----------------*/
@@ -556,7 +558,7 @@ section {
 #map {
     width: 49%;
     border-radius: 10px;
-    border: 1px solid #acacac;
+    border: 3px solid #9b9b9b;
 }
 .contact {
 	background: #fff;
@@ -573,6 +575,7 @@ section {
 	background: rgba(0,0,0,0.85);
     border-radius: 10px;
     padding: 20px 40px;
+    border: 3px solid #9b9b9b;
 }
 .contact-details * {
 	font-family: 'Montserrat', sans-serif;
