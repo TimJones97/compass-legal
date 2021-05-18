@@ -9,7 +9,7 @@ function smallNavOnScroll(){
 	}
 	$(window).scroll(function(){
 		var scrollTop = $(document).scrollTop();
-		if(scrollTop > 5 || isMobile()){
+		if(scrollTop > 250 || isMobile()){
 			$('.navbar').addClass('opaque');
 		}
 		else {
@@ -49,9 +49,43 @@ function preventDefaultOnClick(){
 		e.preventDefault();
 	})
 }
+function showHiddenFooterScroll(){
+	// Check scroll position on page load before 
+	// adding scroll listener
+	if($(document).scrollTop() > $(window).height() + 200){
+		$('footer').css('opacity', '1');
+	}
+	else {
+		$('footer').css('opacity', '0');
+	}
+	$(window).scroll(function(){
+		if($(document).scrollTop() > $(window).height() + 200){
+			$('footer').css('opacity', '1');
+		}
+		else {
+			$('footer').css('opacity', '0');
+		}
+	});
+}
 function setCopyrightYear(){
 	var theDate = new Date(); 
 	$(".year").text(theDate.getFullYear());
+}
+// function fadeBannerText(){
+// 	$(window).scroll(function(){
+// 		var scrollTop = $(this).scrollTop(),
+// 			heroText = $(".parallax-window h1");
+
+// 	  	if (scrollTop > 50) {
+// 		    heroText.css('color', "rgba(255, 255, 255, 0.2)");
+// 	  	} 
+// 	  	else if ( scrollTop < 50 ) {
+// 		    heroText.css('color', "rgba(255, 255, 255, 1.0)");
+// 	  	}
+//     });
+// }
+function animateHeroText(){
+	$('.banner-text').addClass('animate');
 }
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
@@ -68,6 +102,8 @@ $(document).ready(function(){
 	toggleMobileNav();
 	preventDefaultOnClick();
 	setCopyrightYear();
+	showHiddenFooterScroll();
+	animateHeroText();
 	setTimeout(function(){
 		addBodyFooterMargin();
 	}, 200)
