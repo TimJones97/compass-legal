@@ -5,8 +5,11 @@ body {
 	overflow-x: hidden;
 }
 *::selection {
-  background: #d7212e;
-  color: #fff;
+	background: #d7212e;
+	color: #fff;
+}
+* {
+	-webkit-font-smoothing: antialiased;
 }
 *:focus,
 *:hover {
@@ -20,7 +23,10 @@ p, a {
 	font-weight: 500;
 	font-size: 16px;
 }
-main, section {
+a:hover {
+	text-decoration: none;
+}
+section {
 	transition: all 0.5s ease;
 }
 .body-overlay {
@@ -69,8 +75,7 @@ main, section {
 	width: 100%;
 	margin: 0 auto;
 	flex-flow: row nowrap;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
+	justify-content: space-between;
     align-items: center;
 	padding: 40px 40px 40px 60px;
 }
@@ -82,14 +87,17 @@ main, section {
 	position: relative;
 }
 .navbar-brand {
-	width: 400px;
-	display: flex;
-	align-items: center;
+	position: relative;
+	width: 250px;
+	height: 50px;
 }
 .navbar-brand img {
+	width: 250px;
+	height: auto;
 	position: absolute;
-	left: 25px;
-	height: 25px;
+	top: 50%;
+	left: 0;
+	transform: translate(0%, -50%);
 }
 .navbar-brand img.logo-black {
 	opacity: 0;
@@ -113,6 +121,8 @@ main, section {
 }
 .nav-item {
 	padding-left: 20px;
+	display: flex;
+	align-items: center;
 }
 .nav-link {
 	color: #fff;
@@ -123,6 +133,9 @@ main, section {
 }
 .nav-link:hover {
 	color: #d7212e;
+}
+.nav-item .call-btn {
+	margin-top: 0;
 }
 
 /*MENU BUTTON*/
@@ -164,19 +177,19 @@ main, section {
 /*-----OPAQUE NAV STYLES-----*/
 
 .navbar.opaque {
-	background: #fff;
+	background: #fdfdfd;
 	font-size: inherit;
     font-weight: inherit;
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 75%);
-}
-.navbar.opaque .navbar-brand {
-	width: 380px;
 }
 .navbar.opaque .nav-link {
 	color: #000;
 }
 .navbar.opaque .nav-link:hover {
 	color: #d7212e;
+}
+.navbar.opaque .nav-item .call-btn {
+	color: #3b3b3b;
 }
 .navbar.opaque .navbar-brand p,
 .navbar.opaque .navbar-brand p span {
@@ -292,14 +305,22 @@ main, section {
 .mobile-nav .contact-item dt i {
 	color: #3b3b3b;
 }
-/*----------------MAIN SECTION----------------*/
+
+/*----------------BODY CONTAINER----------------*/
 
 main {
+	z-index: 1;
+	box-shadow: 0 0 20px rgb(0 0 0 / 85%);
+}
+/*----------------HERO----------------*/
+
+.hero {
 	width: 100%;
-	height: 80vh;
+	height: 90vh;
+    border-top: unset;
 }
 .parallax-window {
-	height: 80vh;
+	height: 90vh;
     background: transparent;
     position: relative;
 }
@@ -321,7 +342,7 @@ main {
 	margin: 0;
 	text-align: center;
 	color: #fff;
-	font-size: 3vw;
+	font-size: 60px;
 }
 .parallax__container {
   clip: rect(0,auto,auto,0);
@@ -331,7 +352,6 @@ main {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: -100;
 }
 .parallax {
   background-position: center;
@@ -357,7 +377,7 @@ section {
     border-top: 3px solid #9b9b9b;
 }
 .about {
-	background: #fff;
+	background: #f5f5f5;
 }
 .heading-container {
 	width: auto;
@@ -393,6 +413,8 @@ section {
 	padding: 40px;
 	border-radius: 10px;
 	border: 2px solid transparent;
+	transform: translateZ(0) perspective(999px);
+	cursor: default;
 }
 .objectives .objectives-container .card:last-of-type {
 	margin-right: 0%;
@@ -418,12 +440,12 @@ section {
 .objectives .objectives-container .card:hover {
 	border: 2px solid #acacac;
     border-top: 2px solid rgb(215 33 46);
-	transform: scale3d(1.02, 1.02, 1);
+	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1);
 }
 /*----------------SERVICES SECTION----------------*/
 
 .services {
-	background: #fff;
+	background: #f5f5f5;
 }
 .services .container-wrap .service-boxes {
 	display: flex;
@@ -477,6 +499,7 @@ section {
 .services .container-wrap .service-boxes .service:hover {
 	border: 1px solid #3b3b3b;
 	transform: scale3d(1.03, 1.03, 1) perspective(999px);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .services .container-wrap .service-boxes .service:hover img {
 	transform: scale3d(1.05, 1.05, 1) perspective(999px);
@@ -504,6 +527,8 @@ section {
 	border-radius: 10px;
 	border: 2px solid transparent;
 	z-index: 1;
+	transform: translateZ(0) perspective(999px);
+	cursor: default;
 }
 .steps .step:last-of-type {
 	margin-right: 0%;
@@ -511,7 +536,7 @@ section {
 .steps .step:hover {
 	border: 2px solid #acacac;
     border-top: 2px solid rgb(215 33 46);
-	transform: scale3d(1.02, 1.02, 1);
+	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1);
 }
 .steps .step * {
 	font-family: 'Montserrat', sans-serif;
@@ -544,35 +569,32 @@ section {
 	font-weight: 500;
 }
 .call-btn {
-	display: block;
+	display: table;
 	margin: 0 auto;
-	border: 1px solid #9b9b9b;
+	border: 2px solid #d7212e;
 	background: transparent;
 	margin-top: 20px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	border-radius: 10px;
 	padding: 10px 20px;
-	color: #d7212e;
-	transition: background 0.5s ease;
+	color: #fff;
+	transition: all 0.4s ease;
 }
 .call-btn:hover {
-	background: rgba(0,0,0,.2);
-}
-.btn-anchor:hover {
-	text-decoration: none;
+	color: #fff !important;
+	background: #d7212e;
 }
 /*----------------CONTACT SECTION----------------*/
 
 /*MAP*/
-
 #map {
     width: 49%;
     border-radius: 10px;
-    border: 3px solid #9b9b9b;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .contact {
-	background: #fff;
+	background: #f5f5f5;
 	border-bottom: unset;
 }
 .contact .contact-container {
@@ -583,15 +605,15 @@ section {
     height: 100%;
 	width: 49%;
 	height: auto;
-	background: rgba(0,0,0,0.85);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
     border-radius: 10px;
     padding: 20px 40px;
-    border: 3px solid #9b9b9b;
+    background: #fff;
 }
 .contact-details * {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	color: #fff;
+	color: #555;
 }
 .contact-details hr {
 	border-top: 1px solid #acacac;
@@ -618,9 +640,6 @@ section {
 	top: 50%;
 	transform: translate(0%, -50%);
 }
-.contact-item dd a {
-	color: #fff;
-}
 /*Hours*/
 .contact-item table {
 	margin-left: 5px;
@@ -628,7 +647,11 @@ section {
 /*----------------FOOTER SECTION----------------*/
 footer {
 	background: #1b1b1b;
-    border-top: 3px solid #9b9b9b;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
 }
 footer * {
 	color: #9b9b9b;
@@ -636,13 +659,22 @@ footer * {
 footer .container-wrap {
 	overflow: hidden;
 }
+footer .link-container {
+	overflow: hidden;
+}
 footer .footer-links {
 	float: left;
 	margin-right: 30px;
 }
-footer p {
-	font-size: 18px;
+footer p,
+footer span {
+	font-size: 16px;
 	color: #cecece;
+	clear: both;
+}
+footer .logo {
+	width: 250px;
+	margin-bottom: 30px;
 }
 footer .footer-links a {
 	display: block;
@@ -653,7 +685,13 @@ footer .footer-links a:hover {
 	color: #e7e7e7;
 	text-decoration: none;
 }
-
+footer .copy-text {
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+footer .copy-text:last-of-type {
+	margin-top: 5px;
+}
 /*------------MEDIA QUERIES-----------*/
 
 @media only screen and (min-width: 1200px){
@@ -687,13 +725,13 @@ footer .footer-links a:hover {
 	}
 	/*NAVBAR STYLES*/
 	.navbar .container-wrap {
-		padding: 0px 5px 0px 35px;
+		padding: 0px 5px;
 	}
 	.mobile-nav .logo img,
-	.navbar-brand img {
-		width: 20px;
-		height: 20px;
-		left: 7px;
+	.navbar-brand img,
+	.navbar-brand {
+		width: 200px;
+		height: auto;
 	}
 	.mobile-nav .logo p, .mobile-nav .logo p span,
 	.navbar-brand p, .navbar-brand p span {
@@ -711,7 +749,7 @@ footer .footer-links a:hover {
 	.mobile-nav .contact-details {
 		display: none;
 	}
-	/*MAIN SECTION STYLES*/
+	/*HERO STYLES*/
 	.parallax-window h1 {
 	    text-align: left;
 	    width: calc(100% - 40px);
@@ -724,7 +762,7 @@ footer .footer-links a:hover {
 	}
 	.objectives .objectives-container .card {
 		width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
@@ -736,7 +774,7 @@ footer .footer-links a:hover {
 	}
 	.steps .step {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 	}
 	/*CONTACT SECTION*/
 	.contact .contact-container {
@@ -752,8 +790,19 @@ footer .footer-links a:hover {
 	}
 }
 @media only screen and (max-width: 479px){
+	/*MOBILE NAV*/
+	.mobile-nav .close-btn {
+	    top: 45px;
+	    right: 30px;
+	    width: 17px;
+	    height: 17px;
+	}
+	.mobile-nav .logo {
+	    top: 35px;
+	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
 	    width: 100%;
+	    margin-bottom: 10px;
 	}
 }
