@@ -493,13 +493,8 @@ section {
 .objectives * {
 	color: #fff;
 }
-.objectives .objectives-container {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: nowrap;
-}
-.objectives .objectives-container .card {
-	width: 49%;
+.objectives .objectives-container .objective {
+	width: 100%;
 	background: rgba(0,0,0,.2);
 	transition: all 0.5s ease;
 	padding: 40px;
@@ -507,32 +502,30 @@ section {
 	border: 2px solid transparent;
 	transform: translateZ(0) perspective(999px);
 	cursor: default;
+	margin-bottom: 15px;
 }
-.objectives .objectives-container .card:last-of-type {
-	margin-right: 0%;
-}
-.objectives .objectives-container .card ul {
+.objectives .objectives-container .objective ul {
 	padding-inline-start: 0px;
 }
-.objectives .objectives-container .card ul li {
+.objectives .objectives-container .objective ul li {
 	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	margin-bottom: 5px;
 	list-style: none;
 }
-.objectives .objectives-container .card .title {
+.objectives .objectives-container .objective .title {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
-.objectives .objectives-container .card p {
+.objectives .objectives-container .objective p {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 }
-.objectives .objectives-container .card:hover {
+.objectives .objectives-container .objective:hover {
 	border: 2px solid #acacac;
     border-top: 2px solid rgb(215 33 46);
-	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1);
+	transform: translateZ(0) perspective(999px) scale3d(1.01, 1.01, 1);
 }
 /*----------------SERVICES SECTION----------------*/
 
@@ -924,15 +917,6 @@ footer .footer-video__container video {
 	    text-align: left;
 	    width: calc(100% - 40px);
 	    font-size: 40px;
-	}
-	/*OBJECTIVES SECTION*/
-	.objectives .objectives-container {
-		flex-wrap: wrap;
-		flex-direction: column;
-	}
-	.objectives .objectives-container .card {
-		width: 100%;
-		margin-bottom: 10px;
 	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
