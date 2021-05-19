@@ -86,6 +86,10 @@ function setCopyrightYear(){
 // }
 function animateHeroText(){
 	$('.banner-text').addClass('animate');
+	setTimeout(function(){
+		$('.banner-text').removeClass('animate');
+		$('.banner-text').addClass('animate-finish');
+	}, 4000)
 }
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
@@ -103,6 +107,7 @@ $(document).ready(function(){
 	preventDefaultOnClick();
 	setCopyrightYear();
 	showHiddenFooterScroll();
+	addBodyFooterMargin();
 	setTimeout(function(){
 		addBodyFooterMargin();
 		animateHeroText();
