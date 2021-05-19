@@ -137,6 +137,8 @@ section {
 }
 .nav-item .call-btn {
 	margin-top: 0;
+	color: #fff;
+	font-weight: 700;
 }
 
 /*MENU BUTTON*/
@@ -188,9 +190,6 @@ section {
 }
 .navbar.opaque .nav-link:hover {
 	color: #d7212e;
-}
-.navbar.opaque .nav-item .call-btn {
-	color: #3b3b3b;
 }
 .navbar.opaque .navbar-brand p,
 .navbar.opaque .navbar-brand p span {
@@ -358,7 +357,7 @@ main {
 	position: relative;
 	color: #fff !important;
 	opacity: 0;
-	transition: color 0.7s ease;
+	transition: color 0.5s ease;
 }
 /*Animate class added after load*/
 .parallax-window .banner-text.animate-finish span {
@@ -559,7 +558,7 @@ section {
 	height: 190px;
 	overflow: hidden;
 	cursor: pointer;
-	transform: perspective(999px);
+	transform: translateZ(0) perspective(999px);
 	background: #fff;
 }
 .services .container-wrap .service-boxes .service .image-container {
@@ -598,15 +597,39 @@ section {
 	left: 50%;
 	transform: perspective(999px) translate(-50%, -50%);
 	z-index: 0;
-	transition: all 0.5s ease;
+	transition: all 0.4s ease;
 }
 .services .container-wrap .service-boxes .service:hover {
 	transform: scale3d(1.03, 1.03, 1) perspective(999px);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .services .container-wrap .service-boxes .service:hover img {
-	margin-left: 15px;
+	margin-left: 10px;
 	transform: scale3d(1.05, 1.05, 1) perspective(999px) translate(-50%, -50%);
+}
+/*View all link*/
+.services .link-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+.services .view-all-link {
+	color: #3b3b3b;
+	display: table;
+	margin: 0 auto;
+	border: 1px solid #d7212e;
+	background: transparent;
+	margin-top: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	border-radius: 50px;
+	padding: 10px 20px;
+	color: #d7212e;
+	transition: all 0.4s ease;
+	background: transparent;
+}
+.services a.view-all-link:hover {
+	background: rgba(145, 16, 25, 0.1);
 }
 
 /*----------------GET STARTED SECTION----------------*/
@@ -639,11 +662,11 @@ section {
 }
 .steps .step:hover {
 	border: 2px solid #acacac;
-    border-top: 2px solid rgb(215 33 46);
+    border-top: 2px solid rgb(182 20 32);
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1);
 }
 .steps .step:hover span {
-	background: rgb(145 16 25);
+	background: rgb(182 20 32);
 	color: #fff;
 }
 .steps .step * {
@@ -680,19 +703,21 @@ section {
 .call-btn {
 	display: table;
 	margin: 0 auto;
-	border: 2px solid #d7212e;
+	border: 1px solid #d7212e;
 	background: transparent;
 	margin-top: 20px;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	border-radius: 10px;
+	font-weight: 500;
+	border-radius: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	transition: all 0.4s ease;
+	background: #d7212e;
 }
 .call-btn:hover {
 	color: #fff !important;
-	background: #d7212e;
+	border: 1px solid rgb(145 16 25);
+	background: rgb(145 16 25);
 }
 /*----------------CONTACT SECTION----------------*/
 
@@ -700,6 +725,9 @@ section {
 #map {
     width: 49%;
     border-radius: 10px;
+    transition: box-shadow 0.5s ease;
+}
+#map:hover {
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .contact {
@@ -714,10 +742,13 @@ section {
     height: 100%;
 	width: 49%;
 	height: auto;
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
     border-radius: 10px;
     padding: 20px 40px;
     background: #fff;
+    transition: box-shadow 0.5s ease;
+}
+.contact-details:hover {
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .contact-details * {
 	font-family: 'Montserrat', sans-serif;
@@ -759,7 +790,7 @@ section {
 }
 /*----------------FOOTER SECTION----------------*/
 footer {
-	background: #1b1b1b;
+	/*background: #1b1b1b;*/
 	position: fixed;
 	width: 100%;
 	left: 0;
@@ -806,6 +837,30 @@ footer .copy-text {
 }
 footer .copy-text:last-of-type {
 	margin-top: 5px;
+}
+/*Background video*/
+footer .footer-video__container,
+footer .footer-video__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+footer .footer-video__overlay {
+	background: rgba(27, 27, 27, 0.95);
+	z-index: -1;
+}
+footer .footer-video__container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+  	min-height: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.5s ease;
 }
 /*------------MEDIA QUERIES-----------*/
 

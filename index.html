@@ -104,7 +104,7 @@
       </div>
     </div>
     <main>
-      <section class="hero">
+      <section class="hero" id="home">
         <div class="parallax-window">
           <div class="parallax" data-parallax-image="./files/img/home-page/parallax.jpg">
           </div>
@@ -212,6 +212,9 @@
               <p>Wills, Estates and Powers</p>
             </div>
           </div>
+          <div class="link-container">
+            <a class="view-all-link" href="#">View all services</a>
+          </div>
         </div>
       </section>
       <section class="get-started">
@@ -227,7 +230,7 @@
                 Contact us
               </p>
               <p>
-                Get in contact via email, phone or come meet in person.
+                Get in contact via email, phone, or come meet in person.
               </p>
             </div>
             <div class="step">
@@ -337,13 +340,27 @@
         <p class="copy-text">Liability limited by a scheme under Professional Standards Legislation.</p>
         <p class="copy-text">Copyright &copy; <span class="year"></span> Compass Legal</p>
       </div>
+      <div class="footer-video__container">
+        <video muted loop="loop" autoplay playsinline>
+          <source src="./files/img/general/footer-bg.mp4" type="video/mp4">
+        </video>
+        <div class="footer-video__overlay"></div>
+      </div>
     </footer>
+
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
+    <!-- Bootstrap.js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 
+    <!-- Modified UniversalParallax.js -->
     <script src="./files/js/universal-parallax.js"></script>
 
+    <!-- Velocity.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js" integrity="sha256-1HqoI76JGKA17K0C0s9K8L/iy8PAC43KVLt1hRD/Ojc=" crossorigin="anonymous"></script>
+
+    <!-- Local Scripts -->
     <script>
       document.write('<script type="text/javascript" src="./files/js/script.js?v=' + Date.now() + '"\/><\/script>')
     </script>
