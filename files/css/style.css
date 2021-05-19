@@ -988,7 +988,10 @@ section.client-centre {
 	.container-wrap {
 		padding: 40px 20px;
 	}
-	/*NAVBAR STYLES*/
+	/*NAV*/
+	.navbar {
+	    height: 80px;
+	}
 	.navbar .container-wrap {
 		padding: 0px 5px;
 	}
@@ -1002,14 +1005,16 @@ section.client-centre {
 	.navbar-brand p, .navbar-brand p span {
 		font-size: 20px;
 	}
-	/*MOBILE NAV STYLES*/
+	/*MOBILE NAV*/
 	.mobile-nav {
 		width: 100%;
 		right: calc(-100% - 5px);
 	}
 	.mobile-nav .close-btn {
-	    top: 45px;
-	    right: 40px;
+	    top: 30px;
+	    right: 30px;
+	    width: 17px;
+	    height: 17px;
 	}
 	.mobile-nav .contact-details {
 		display: none;
@@ -1075,15 +1080,8 @@ section.client-centre {
 	}
 }
 @media only screen and (max-width: 479px){
-	/*MOBILE NAV*/
-	.mobile-nav .close-btn {
-	    top: 45px;
-	    right: 30px;
-	    width: 17px;
-	    height: 17px;
-	}
 	.mobile-nav .logo {
-	    top: 35px;
+	    top: 20px;
 	}
 	/*MAIN*/
 	.parallax-window .banner-text.animate span:nth-child(3) {
