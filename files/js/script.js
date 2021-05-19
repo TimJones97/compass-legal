@@ -1,4 +1,5 @@
 function smallNavOnScroll(){
+	var oneQuarterHeight = $(window).height() * 0.2;
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
 	if(scrollTop > 5 || isMobile()){
@@ -9,7 +10,7 @@ function smallNavOnScroll(){
 	}
 	$(window).scroll(function(){
 		var scrollTop = $(document).scrollTop();
-		if(scrollTop > 250 || isMobile()){
+		if(scrollTop > oneQuarterHeight || isMobile()){
 			$('.navbar').addClass('opaque');
 		}
 		else {
@@ -32,7 +33,7 @@ function toggleMobileNav(){
 	});
 }
 function addBodyFooterMargin(){
-	$('main').css('margin-bottom', $('footer').height() + 'px');
+	$('main').css('margin-bottom', $('footer').outerHeight() + 'px');
 }
 function isMobile(){
 	if($(window).width() < 767){
