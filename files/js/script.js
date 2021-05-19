@@ -1,5 +1,9 @@
-function smallNavOnScroll(){
-	var oneQuarterHeight = $(window).height() * 0.2;
+function smallNavOnScroll(index=false){
+	var offset = 5;
+	// If on homepage
+	if(index){
+		offset = $(window).height() * 0.2;
+	}
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
 	if(scrollTop > 5 || isMobile()){
@@ -43,41 +47,20 @@ function isMobile(){
 		return false;
 	}
 }
-function showHiddenFooterScroll(){
-	// Check scroll position on page load before 
-	// adding scroll listener
-	if($(document).scrollTop() > $(window).height() + 200){
-		$('footer').css('opacity', '1');
-	}
-	else {
-		$('footer').css('opacity', '0');
-	}
-	$(window).scroll(function(){
-		if($(document).scrollTop() > $(window).height() + 200){
-			$('footer').css('opacity', '1');
-		}
-		else {
-			$('footer').css('opacity', '0');
-		}
-	});
-}
 function setCopyrightYear(){
 	var theDate = new Date(); 
 	$(".year").text(theDate.getFullYear());
 }
-// function fadeBannerText(){
-// 	$(window).scroll(function(){
-// 		var scrollTop = $(this).scrollTop(),
-// 			heroText = $(".parallax-window h1");
-
-// 	  	if (scrollTop > 50) {
-// 		    heroText.css('color', "rgba(255, 255, 255, 0.2)");
-// 	  	} 
-// 	  	else if ( scrollTop < 50 ) {
-// 		    heroText.css('color', "rgba(255, 255, 255, 1.0)");
-// 	  	}
-//     });
-// }
+function isHomepage(){
+	var page = window.title;
+	// If page title matches homepage title, return true
+	if(page == 'Brisbane & Gold Coast Lawyers | Compass Legal Solutions'){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 function animateHeroText(){
 	$('.banner-text').addClass('animate');
 	// Wait 4.2s for animation to complete
@@ -126,19 +109,23 @@ $(window).resize(function(){
 	setTimeout(function(){
 		addBodyFooterMargin();
 	}, 200)
+	smallNavOnScroll(isHomepage());
+});
+$(window).scroll(function(){
+	smallNavOnScroll(isHomepage());
 });
 $(document).ready(function(){
 	bindVelocity();
-	smallNavOnScroll();
+	smallNavOnScroll(isHomepage());
 	toggleMobileNav();
 	setCopyrightYear();
-	showHiddenFooterScroll();
+	// showHiddenFooterScroll();
 	addBodyFooterMargin();
 	setTimeout(function(){
 		addBodyFooterMargin();
 		animateHeroText();
 	}, 200)
 	new universalParallax().init({
-	  speed: 2.0
+	  speed: 1.8
 	});
 });

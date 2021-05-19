@@ -192,6 +192,9 @@ section {
 .navbar.opaque .nav-link:hover {
 	color: #d7212e;
 }
+.navbar.opaque .nav-item.active .nav-link {
+	color: #d7212e;
+}
 .navbar.opaque .nav-item .call-btn {
 	background: #d7212e;
 }
@@ -325,8 +328,9 @@ main {
 }
 .parallax-window {
 	height: 90vh;
-    background: transparent;
+    background: #000;
     position: relative;
+    z-index: 2;
 }
 .parallax-overlay {
 	position: absolute;
@@ -334,8 +338,7 @@ main {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #020000;
-	opacity: 0.85;
+	background: rgba(0, 0, 0, 0.6);
 }
 .parallax-window .banner-text {
 	position: absolute;
@@ -348,7 +351,7 @@ main {
 	color: #fff;
 	font-size: 60px;
 	transition: color 0.7s ease;
-	color: rgba(255, 255, 255, 0);
+	color: #fff;
 	cursor: default;
 }
 .parallax-window .banner-text:hover {
@@ -430,39 +433,29 @@ main {
 		color: rgba(255, 255, 255, 1);
 	}
 }
-/*.parallax-window h1 span:after {
-	content: "";
-	position: absolute;
-	bottom: 6px;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background: #d7212e;
-	z-index: -1;
-}*/
 .parallax__container {
-  clip: rect(0,auto,auto,0);
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
+	clip: rect(0,auto,auto,0);
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 .parallax {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transform: translateZ(0px) !important;
-  width: 100%;
-  opacity: 1;
-  transition: height 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	transform: translateZ(0px) !important;
+	width: 100%;
+	opacity: 1;
+	transition: height 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
 }
 
 /*----------------ABOUT SECTION----------------*/
@@ -718,6 +711,7 @@ section {
 	border: 1px solid rgb(145 16 25);
 	background: rgb(145 16 25);
 }
+
 /*----------------CONTACT SECTION----------------*/
 
 /*MAP*/
@@ -787,13 +781,15 @@ section {
 .contact-item table {
 	margin-left: 5px;
 }
+
 /*----------------FOOTER SECTION----------------*/
+
 footer {
 	position: fixed;
 	width: 100%;
 	left: 0;
 	bottom: 0;
-	opacity: 0;
+	opacity: 1;
 	z-index: -1;
 	padding: 20px 0px;
 }
@@ -863,6 +859,103 @@ footer .footer-video__container video {
     opacity: 1;
     transition: all 0.5s ease;
 }
+
+/*----------------OUR TEAM PAGE----------------*/
+
+.hero.hero-sml,
+.hero.hero-sml .parallax-window {
+	height: 50vh;
+	min-height: 500px;
+}
+
+section.our-team {
+	background: #f5f5f5;
+}
+
+.our-team .people {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.our-team .people .person {
+	width: 32%;
+	margin-right: 1%;
+	margin-bottom: 15px;
+	background: #fff;
+	border-radius: 6px;
+	height: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: translateZ(0) perspective(999px);
+	transition: all 0.5s ease;
+	cursor: default;
+}
+.our-team .people .person img {
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+}
+.our-team .people .person p {
+	text-align: center;
+}
+.our-team .people .person .name {
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+.our-team .people .person .role {
+	color: #9b9b9b;
+	margin-top: 0px;
+}
+/*Hover effects*/
+.our-team .people .person:hover {
+	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
+
+/*----------------CLIENT CENTRE PAGE----------------*/
+
+section.client-centre {
+	background: #f5f5f5;
+}
+
+.client-centre .client-links {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.client-centre .client-links .page {
+	width: 49%;
+	margin-right: 1%;
+	margin-bottom: 15px;
+	background: #fff;
+	border-radius: 6px;
+	height: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: translateZ(0) perspective(999px);
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+.client-centre .client-links .page img {
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+}
+.client-centre .client-links .page p {
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	color: #000;
+}
+/*Hover effects*/
+.client-centre .client-links .page:hover {
+	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
 /*------------MEDIA QUERIES-----------*/
 
 @media only screen and (min-width: 1200px){
@@ -926,6 +1019,35 @@ footer .footer-video__container video {
 	    width: calc(100% - 40px);
 	    font-size: 40px;
 	}
+	/*
+		"Legal results through"
+	*/
+	.parallax-window .banner-text span:nth-child(1) {
+	}
+	/*
+		"integrity" + ","
+	*/
+	.parallax-window .banner-text span:nth-child(2),
+	.parallax-window .banner-text span:nth-child(3) {
+	}
+	/*
+		"teamwork"
+	*/
+	.parallax-window .banner-text span:nth-child(4) {
+	}
+	/*
+		"and"
+	*/
+	.parallax-window .banner-text span:nth-child(5) {
+		display: inline-block;
+	}
+	/*
+		"open communication" + "."
+	*/
+	.parallax-window .banner-text span:nth-child(6),
+	.parallax-window .banner-text span:nth-child(7) {
+		display: inline-block;
+	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
 	    width: 49%;
@@ -965,6 +1087,25 @@ footer .footer-video__container video {
 	/*MAIN*/
 	.parallax-window .banner-text.animate span:nth-child(3) {
 		display: inline-block;
+	}
+	/*
+		"Legal results through"
+	*/
+	.parallax-window .banner-text span:nth-child(1) {
+		display: block;
+	}
+	/*
+		"and"
+	*/
+	.parallax-window .banner-text span:nth-child(5) {
+		display: inline-block;
+	}
+	/*
+		"open communication" + "."
+	*/
+	.parallax-window .banner-text span:nth-child(6),
+	.parallax-window .banner-text span:nth-child(7) {
+		display: unset;
 	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
