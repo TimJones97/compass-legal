@@ -103,9 +103,9 @@ $(document).ready(function(){
 	preventDefaultOnClick();
 	setCopyrightYear();
 	showHiddenFooterScroll();
-	animateHeroText();
 	setTimeout(function(){
 		addBodyFooterMargin();
+		animateHeroText();
 	}, 200)
 	new universalParallax().init({
 	  speed: 2.0
