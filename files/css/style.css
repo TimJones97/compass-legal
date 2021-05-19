@@ -1010,6 +1010,9 @@ section.client-centre {
 		width: 100%;
 		right: calc(-100% - 5px);
 	}
+	.mobile-nav .logo {
+	    top: 20px;
+	}
 	.mobile-nav .close-btn {
 	    top: 30px;
 	    right: 30px;
@@ -1080,9 +1083,6 @@ section.client-centre {
 	}
 }
 @media only screen and (max-width: 479px){
-	.mobile-nav .logo {
-	    top: 20px;
-	}
 	/*MAIN*/
 	.parallax-window .banner-text.animate span:nth-child(3) {
 		display: inline-block;
