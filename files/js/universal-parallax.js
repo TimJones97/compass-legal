@@ -1,7 +1,9 @@
 "use strict";
-var screenWidth = $(window).innerWidth();
-var newScreenWidth;
-var windowHeight = window.innerHeight
+var screenWidth = $(window).innerWidth(),
+    newScreenWidth,
+    screenHeight = $(window).innerHeight(),
+    newScreenHeight,
+    windowHeight = window.innerHeight
   , windowHeightExtra = 0
   , safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
   , mobile = /Mobi/.test(navigator.userAgent);
@@ -67,12 +69,13 @@ var positionParallax = function(e, t, a, i) {
 };
 
 function adjustOnLargeResize(t, a){
-    newScreenWidth = $(window).innerWidth();
-    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50){
-      // console.log(screenWidth + " old screen width");
-      // console.log(newScreenWidth + " new screen width");
+    newScreenWidth = $(window).innerWidth(),
+    newScreenHeight = $(window).innerHeight();
+    if((screenWidth - newScreenWidth) > 50 || (newScreenWidth - screenWidth) > 50
+        || newScreenHeight > screenHeight || newScreenHeight < screenHeight){
       windowHeight = window.innerHeight,
         calculateHeight(t, a)
       screenWidth = $(window).innerWidth();
+      screenWidth = $(window).innerHeight();
     }
 }

@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
 	font-family: 'Oswald', sans-serif;
 	transition: font-size 0.5s ease;
 }
-p, a {
+p, a, label {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
@@ -135,7 +135,7 @@ section {
 .nav-link:hover {
 	color: #d7212e;
 }
-.nav-item .call-btn {
+.nav-item .solid-btn {
 	margin-top: 0;
 	color: #fff;
 	font-weight: 700;
@@ -195,8 +195,11 @@ section {
 .navbar.opaque .nav-item.active .nav-link {
 	color: #d7212e;
 }
-.navbar.opaque .nav-item .call-btn {
+.navbar.opaque .nav-item .solid-btn {
 	background: #d7212e;
+}
+.navbar.opaque .nav-item .solid-btn:hover {
+	border: 1px solid #d7212e;
 }
 .navbar.opaque .navbar-brand p,
 .navbar.opaque .navbar-brand p span {
@@ -223,7 +226,7 @@ section {
 	background: #fff;
 	display: flex;
 	flex-direction: column;
-	transition: right 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	z-index: 1001;
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 75%);
 }
@@ -326,6 +329,7 @@ main {
 	width: 100%;
 	height: 90vh;
     border-top: unset;
+    transition: unset;
 }
 .parallax-window {
 	height: 90vh;
@@ -333,7 +337,8 @@ main {
     position: relative;
     z-index: 2;
 }
-.parallax-overlay {
+.parallax-overlay,
+.parallax-window .hero-container {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -341,18 +346,23 @@ main {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.6);
 }
+.parallax-window .hero-container {
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.parallax-window .hero-container .solid-btn {
+	margin-top: 50px;
+	opacity: 0;
+}
 .parallax-window .banner-text {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
 	width: calc(100% - 40px);
-	margin: 0;
+	margin: 0 auto;
 	text-align: center;
 	color: #fff;
 	font-size: 60px;
 	transition: color 0.7s ease;
-	color: #fff;
 	cursor: default;
 }
 .parallax-window .banner-text:hover {
@@ -367,13 +377,20 @@ main {
 	opacity: 0;
 	transition: color 0.5s ease;
 }
+/* 
+	"Legal results through"
+*/
+.parallax-window .banner-text span:nth-child(1) {
+	opacity: 1;
+}
+
 /*Animate class added after load*/
 .parallax-window .banner-text.animate-finish span {
 	animation: unset;
 	opacity: 1;
 }
 /*
-	Hides the following strings:
+	Hides the following strings on hover:
 
 	"Legal results through" + "," + "and" + ."
 */
@@ -381,42 +398,47 @@ main {
 .parallax-window .banner-text.animate-finish:hover span:nth-child(3),
 .parallax-window .banner-text.animate-finish:hover span:nth-child(5),
 .parallax-window .banner-text.animate-finish:hover span:nth-child(7){
-	color: rgba(255, 255, 255, 0.2) !important;
+	color: rgba(255, 255, 255, 0.1) !important;
 }
-.parallax-window .banner-text.animate span {
+/*Animate the banner text and button on load*/
+.parallax-window .banner-text.animate span:not(.first),
+.parallax-window .solid-btn {
 	animation: fadeIn 0.7s linear forwards;
 }
 /*
 	"Legal results through"
 */
-.parallax-window .banner-text.animate span:nth-child(1) {
+/*.parallax-window .banner-text.animate span:nth-child(1) {
 	animation-delay: 0.2s;
-}
+}*/
 /*
 	"integrity" + ","
 */
 .parallax-window .banner-text.animate span:nth-child(2),
 .parallax-window .banner-text.animate span:nth-child(3) {
-	animation-delay: 1.2s;
+	animation-delay: 1s;
 }
 /*
 	"teamwork"
 */
 .parallax-window .banner-text.animate span:nth-child(4) {
-	animation-delay: 2s;
+	animation-delay: 1.8s;
 }
 /*
 	"and"
 */
 .parallax-window .banner-text.animate span:nth-child(5) {
-	animation-delay: 3s;
+	animation-delay: 2.8s;
 }
 /*
 	"open communication" + "."
 */
 .parallax-window .banner-text.animate span:nth-child(6),
 .parallax-window .banner-text.animate span:nth-child(7) {
-	animation-delay: 3.5s;
+	animation-delay: 3.2s;
+}
+.parallax-window .banner-text.animate + .solid-btn {
+	animation-delay: 4s;
 }
 @keyframes fadeIn {
 	0% {
@@ -456,7 +478,6 @@ main {
 	transform: translateZ(0px) !important;
 	width: 100%;
 	opacity: 1;
-	transition: height 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
 }
 
 /*----------------ABOUT SECTION----------------*/
@@ -540,7 +561,6 @@ section {
 	border: 1px solid transparent;
 	transition: all 0.5s ease;
 	text-align: center;
-	padding: 10px;
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
@@ -559,16 +579,6 @@ section {
 	overflow: hidden;
 	border-bottom: 3px solid #acacac;
 	transition: all 0.4s ease;
-}
-.services .container-wrap .service-boxes .service .image-overlay {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	display: flex;
-	align-items: center;
-	transform: translateZ(0) perspective(999px);
 }
 .services .container-wrap .service-boxes .service p {
 	position: absolute;
@@ -608,7 +618,7 @@ section {
 	justify-content: center;
 	margin-top: 15px;
 }
-.services .view-all-link {
+.transparent-btn {
 	color: #3b3b3b;
 	display: table;
 	margin: 0 auto;
@@ -623,8 +633,9 @@ section {
 	transition: all 0.4s ease;
 	background: transparent;
 }
-.services a.view-all-link:hover {
+.transparent-btn:hover {
 	background: rgba(145, 16, 25, 0.1);
+	color: #d7212e;
 }
 
 /*----------------GET STARTED SECTION----------------*/
@@ -693,7 +704,7 @@ section {
 .steps .step p {
 	font-weight: 500;
 }
-.call-btn {
+.solid-btn {
 	display: table;
 	margin: 0 auto;
 	border: 1px solid #d7212e;
@@ -707,7 +718,7 @@ section {
 	transition: all 0.4s ease;
 	background: #d7212e;
 }
-.call-btn:hover {
+.solid-btn:hover {
 	color: #fff !important;
 	border: 1px solid rgb(145 16 25);
 	background: rgb(145 16 25);
@@ -957,6 +968,68 @@ section.client-centre {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
+
+/*----------------CONTACT PAGE----------------*/
+
+.contact-page {
+	background: #f5f5f5;
+}
+.contact-page .contact-container {
+	display: flex;
+	justify-content: flex-start;
+}
+.contact-page .contact-form__container,
+.contact-page .contact-links {
+	width: 49%;
+}
+/*CONTACT FORM*/
+.contact-page .contact-form {
+	width: 400px;
+}
+.contact-page .contact-form * {
+	display: block;
+}
+.contact-page .contact-form input,
+.contact-page .contact-form textarea {
+	border-radius: 6px;
+	border: 1px solid #acacac;
+	width: 100%;
+	padding: 5px 10px;
+}
+.contact-page .contact-form textarea {
+	height: 150px;
+}
+.contact-page .contact-form label {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+.contact-page .contact-form .transparent-btn {
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 130px;
+}
+.contact-page .contact-links .contact-item {
+	margin-bottom: 15px;
+	background: #fff;
+	border-radius: 6px;
+	height: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transform: translateZ(0) perspective(999px);
+	transition: all 0.5s ease;
+	cursor: pointer;
+	text-align: center;
+}
+.contact-page .contact-links .contact-item p {
+	color: #000;
+}
+.contact-page .contact-links .contact-item p i {
+	margin-right: 10px;
+}
+
+
 /*------------MEDIA QUERIES-----------*/
 
 @media only screen and (min-width: 1200px){
@@ -981,13 +1054,6 @@ section.client-centre {
     }
 }
 @media only screen and (max-width: 991px){
-	
-}
-@media only screen and (max-width: 767px){
-	/*GENERAL STYLES*/
-	.container-wrap {
-		padding: 40px 20px;
-	}
 	/*NAV*/
 	.navbar {
 	    height: 80px;
@@ -1001,6 +1067,33 @@ section.client-centre {
 		width: 200px;
 		height: auto;
 	}
+	/*HERO STYLES*/
+	.parallax-window .banner-text {
+	    text-align: left;
+	    width: calc(100% - 80px);
+	}
+	.parallax-window .banner-text span:nth-child(1) {
+		display: block;
+	}
+	.parallax-window .hero-container .solid-btn {
+		margin-left: 40px;
+	}
+	.parallax-window .banner-text.animate-finish:hover span:nth-child(1), 
+	.parallax-window .banner-text.animate-finish:hover span:nth-child(3), 
+	.parallax-window .banner-text.animate-finish:hover span:nth-child(5), 
+	.parallax-window .banner-text.animate-finish:hover span:nth-child(7) {
+		color: #fff !important;
+	}
+}
+@media only screen and (max-width: 767px){
+	/*GENERAL STYLES*/
+	.container-wrap {
+		padding: 40px 20px;
+	}
+	.heading-container h1 {
+		font-size: 45px;
+	}
+	/*NAV*/
 	.mobile-nav .logo p, .mobile-nav .logo p span,
 	.navbar-brand p, .navbar-brand p span {
 		font-size: 20px;
@@ -1022,11 +1115,13 @@ section.client-centre {
 	.mobile-nav .contact-details {
 		display: none;
 	}
+	.mobile-nav .vertical-align {
+	    padding-bottom: 50px;
+	}
 	/*HERO STYLES*/
 	.parallax-window .banner-text {
 	    text-align: left;
 	    width: calc(100% - 40px);
-	    font-size: 40px;
 	}
 	/*
 		"Legal results through"
@@ -1057,6 +1152,9 @@ section.client-centre {
 	.parallax-window .banner-text span:nth-child(7) {
 		display: inline-block;
 	}
+	.parallax-window .hero-container .solid-btn {
+		margin-left: 20px;
+	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
 	    width: 49%;
@@ -1083,7 +1181,14 @@ section.client-centre {
 	}
 }
 @media only screen and (max-width: 479px){
-	/*MAIN*/
+	/*GENERAL*/
+	.heading-container h1 {
+		font-size: 35px;
+	}
+	/*HERO*/
+	.parallax-window .banner-text {
+	    font-size: 35px;
+	}
 	.parallax-window .banner-text.animate span:nth-child(3) {
 		display: inline-block;
 	}

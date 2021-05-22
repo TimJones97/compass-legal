@@ -107,36 +107,40 @@
     <main>
       <section class="hero hero-sml">
         <div class="parallax-window">
-          <div class="parallax" data-parallax-image="../files/img/client-centre/hero-bg.jpg">
+          <div class="parallax" data-parallax-image="../files/img/contact/hero-bg.jpg">
           </div>
           <div class="parallax-overlay">
           </div>
           <h1 class="banner-text">Contact</h1>
         </div>
       </section>
-      <section class="client-centre">
+      <section class="contact-page">
         <div class="container-wrap">
           <div class="heading-container">
-            <h1>Forms and Pages</h1>
+            <h1>Contact Form</h1>
             <hr class="big-hr"/>
           </div>
-          <div class="client-links">
-            <a class="page" href="#">
-              <img src="../files/img/our-team/placeholder.png">
-              <p>Conveyancing E-mail Request</p>
-            </a>
-            <a class="page" href="#">
-              <img src="../files/img/our-team/placeholder.png">
-              <p>Payment of Account Slip</p>
-            </a>
-            <a class="page" href="#">
-              <img src="../files/img/our-team/placeholder.png">
-              <p>Will Instruction Sheet</p>
-            </a>
-            <a class="page" href="#">
-              <img src="../files/img/our-team/placeholder.png">
-              <p>Terms of Engagement</p>
-            </a>
+          <div class="contact-container">
+            <div class="contact-form__container">
+              <form class="contact-form" action="https://formspree.io/f/mrgrprod" method="POST">
+                <label for="name">Name</label>
+                <input id="name" placeholder="Name" type="text" name="FirstName">
+                <label for="email">Email</label>
+                <input id="email" placeholder="Email" type="email" name="Email">
+                <label for="enquiry">Message</label>
+                <textarea id="enquiry" placeholder="Enquiry" name="Enquiry"></textarea>
+                <button class="transparent-btn" type="submit">Send</button>
+              </form>
+            </div>
+            <div class="contact-links">
+              <a class="contact-item" href="tel:07 3807 9577">
+                <p><i class="fas fa-phone-alt"></i>Phone</p>
+                <p>07 3807 9577</p>
+              </a>
+              <a class="contact-item" href="#">
+                <p><i class="fas fa-phone-alt"></i>07 3807 9577</p>
+              </a>
+            </div>
           </div>
         </div>
       </section>
