@@ -722,8 +722,8 @@ section.services {
 	margin-top: 30px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	border-radius: 50px;
-	padding: 10px 20px;
+	border-radius: 60px;
+	padding: 10px 25px;
 	color: #fff;
 	transition: all 0.4s ease;
 	background: #d7212e;
@@ -1005,6 +1005,11 @@ section.client-centre {
 	transform: translateZ(0) perspective(999px);
 }
 .contact-options .contact-details .contact-item {
+	margin-bottom: 10px;
+}
+.contact-options .contact-details hr {
+	border-top: 1px solid #6b6b6b;
+	width: 100%;
 	margin-bottom: 30px;
 }
 /*Make all text color white*/
@@ -1260,10 +1265,18 @@ section.client-centre {
 	.steps .step {
 	    padding: 40px 20px 20px;
 	}
+
+	/*SERVICES*/
+
+	.services .container-wrap .service-boxes .service {
+		width: 49%;
+	}
+
 	/*CONTACT*/
 	.contact-details {
 		padding: 20px;
 	}
+
 	/*CONTACT PAGE*/
 
 	/*Contact details*/
@@ -1275,8 +1288,12 @@ section.client-centre {
 		margin-bottom: 15px;
 		display: block;
 	}
+	.contact-options .contact-details {
+		display: block;
+	}
 	.contact-options .contact-details .contact-item {
-		margin-bottom: 0px;
+		width: 420px;
+		margin-bottom: 30px;
 	}
 	.contact-options .contact-cards {
 		width: 100%;
@@ -1375,10 +1392,6 @@ section.client-centre {
 	.parallax-window .hero-container .solid-btn {
 		margin-left: 20px;
 	}
-	/*SERVICES SECTION*/
-	.services .container-wrap .service-boxes .service {
-	    width: 49%;
-	}
 	/*GET STARTED SECTION*/
 	.steps {
 		flex-direction: column;
@@ -1398,6 +1411,7 @@ section.client-centre {
 	}
 	.contact-details {
 		width: 100%;
+		padding: 15px;
 	}
 	/*SERVICES PAGE*/
 	.services-page .services .service {
