@@ -1441,14 +1441,5 @@ section.client-centre {
 	.services .container-wrap .service-boxes .service {
 	    width: 100%;
 	    margin-bottom: 10px;
-	    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
-	}
-	/*CONTACT*/
-	.contact-details {
-	    padding: 10px;
-	    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
-	}
-	#map {
-	    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
-	}
+   }
 }
