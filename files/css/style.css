@@ -26,6 +26,7 @@ p, a, label, li {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
+	transition: all 0.5s ease;
 }
 a:hover {
 	text-decoration: none;
@@ -240,11 +241,11 @@ section {
 	width: 20px;
 	height: 20px;
 	position: fixed;
-	top: 55px;
+	top: 45px;
 	right: 60px;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.3s ease;
+	transition: all 0.5s ease;
 }
 .mobile-nav .close-btn:hover {
 	opacity: 0 !important;
@@ -261,8 +262,9 @@ section {
 	align-items: center;
 	text-decoration: none;
 	position: absolute;
-	top: 45px;
+	top: 35px;
 	left: 35px;
+	transition: all 0.5s ease;
 }
 .mobile-nav .logo:hover {
 	text-decoration: none;
@@ -272,6 +274,7 @@ section {
 	height: auto;
 	display: inline-block;
 	margin-right: 10px;
+	transition: all 0.5s ease;
 }
 .mobile-nav .logo p,
 .mobile-nav .logo p span {
@@ -313,7 +316,7 @@ section {
 	font-weight: 500;
 }
 .mobile-nav .contact-item a {
-	color: #000;
+	color: #6b6b6b;
 }
 .mobile-nav .contact-item dt i {
 	color: #d7212e;
@@ -615,13 +618,14 @@ section.services {
 .services .container-wrap .service-boxes .service:hover {
 	transform: scale3d(1.03, 1.03, 1) translateZ(0) perspective(999px);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+	border: 1px solid transparent;
 }
 .services .container-wrap .service-boxes .service:hover img {
 	margin-left: 10px;
 	transform: scale3d(1.05, 1.05, 1) perspective(999px) translateZ(0) translate(-50%, -50%);
 }
-.services .container-wrap .service-boxes .service:hover .image-container {
-	border-bottom: 3px solid #d7212e;
+.services .container-wrap .service-boxes .service:hover p {
+	color: #d7212e;
 }
 /*View all link*/
 .services .link-container {
@@ -1119,7 +1123,7 @@ section.client-centre {
 	overflow: hidden;
 	margin-bottom: 30px;
 	transform: translateZ(0) perspective(999px);
-	min-height: 220px;
+	min-height: 480px;
 	transition: all 0.5s ease;
 	border: 1px solid #f5f5f5;
 }
@@ -1147,9 +1151,12 @@ section.client-centre {
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
-	min-height: 220px;
+	min-height: 480px;
 	padding: 20px 40px 20px calc(50% + 40px);
 }
+
+/*HIGHLIGHT TITLE*/
+
 .services-page .services .service .service-text p {
 	font-weight: 700;
 	font-size: 19px;
@@ -1163,6 +1170,10 @@ section.client-centre {
 }
 .services-page .services .service .service-text ul li {
 	padding-left: 10px;
+	margin-bottom: 5px;
+}
+.services-page .services .service .service-text ul li:last-of-type {
+	margin-bottom: 0px;
 }
 .services-page .services .service .service-text ul li::marker {
 	color: #911019;
@@ -1182,14 +1193,20 @@ section.client-centre {
 /*Highlight when coming from home page*/
 .services-page .services .service.highlight {
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+	border: 1px solid transparent;
 }
 /*Hover effects*/
 .services-page .services .service:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
-.services-page .services .service:hover .service-image {
-	border-color: #d7212e;
+.services-page .services .service:hover p {
+	color: #d7212e;
+}
+
+/*Get in touch button*/
+.services-page .solid-btn {
+	margin: 60px auto 40px;
 }
 
 /*------------MEDIA QUERIES-----------*/
@@ -1418,6 +1435,7 @@ section.client-centre {
 	/*SERVICES PAGE*/
 	.services-page .services .service {
 		margin-bottom: 15px;
+		min-height: 100%;
 	}
 	.services-page .services .service .service-image {
 		width: 100%;
@@ -1435,6 +1453,7 @@ section.client-centre {
 	}
 	.services-page .services .service .service-text,
 	.services-page .services .service.right .service-text {
+		min-height: 100%;
 		padding: 170px 20px 30px;
 	}
 	.services-page .services .service .service-text p {
@@ -1516,5 +1535,17 @@ section.client-centre {
 	/*CONTACT PAGE*/
 	.contact-options .contact-details .contact-item {
 	    width: 100%;
+	}
+
+	/*FOOTER*/
+	footer {
+		padding: 20px 0px 20px;
+	}
+	footer .tagline {
+	    margin-top: 5px;
+	    margin-bottom: 30px;
+	}
+	footer .copy-text {
+		margin-top: 30px;
 	}
 }
