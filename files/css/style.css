@@ -571,7 +571,6 @@ section.services {
 	position: relative;
 	width: 32.33333%;
 	margin-bottom: 15px;
-	border: 1px solid transparent;
 	transition: all 0.5s ease;
 	text-align: center;
 	border-radius: 10px;
@@ -581,8 +580,16 @@ section.services {
 	overflow: hidden;
 	cursor: pointer;
 	transform: translateZ(0) perspective(999px);
-	background: #fff;
-	border: 1px solid #f5f5f5;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
+.services .container-wrap .service-boxes .service:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	height: 140px;
+	width: 100%;
+	background: #acacac;
 }
 .services .container-wrap .service-boxes .service .image-container {
 	position: absolute;
@@ -617,8 +624,6 @@ section.services {
 }
 .services .container-wrap .service-boxes .service:hover {
 	transform: scale3d(1.03, 1.03, 1) translateZ(0) perspective(999px);
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
-	border: 1px solid transparent;
 }
 .services .container-wrap .service-boxes .service:hover img {
 	margin-left: 10px;
@@ -746,9 +751,7 @@ section.services {
     width: 49%;
     border-radius: 10px;
     transition: box-shadow 0.5s ease;
-}
-#map:hover {
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
 }
 .contact {
 	background: #f5f5f5;
@@ -766,9 +769,7 @@ section.services {
     padding: 20px 40px;
     background: #fff;
     transition: box-shadow 0.5s ease;
-}
-.contact-details:hover {
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
 }
 .contact-details * {
 	font-family: 'Montserrat', sans-serif;
@@ -1123,19 +1124,19 @@ section.client-centre {
 	overflow: hidden;
 	margin-bottom: 30px;
 	transform: translateZ(0) perspective(999px);
-	min-height: 480px;
+	min-height: 420px;
 	transition: all 0.5s ease;
-	border: 1px solid #f5f5f5;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .services-page .services .service .service-image {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 50%;
+	width: 30%;
 	height: 100%;
 	overflow: hidden;
 	border-right: 3px solid #acacac;
-	transition: border 0.5s ease;
+	transition: width 0.5s ease;
 }
 .services-page .services .service .service-image img {
 	position: absolute;
@@ -1151,12 +1152,9 @@ section.client-centre {
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
-	min-height: 480px;
-	padding: 20px 40px 20px calc(50% + 40px);
+	min-height: 420px;
+	padding: 20px 40px 20px calc(30% + 40px);
 }
-
-/*HIGHLIGHT TITLE*/
-
 .services-page .services .service .service-text p {
 	font-weight: 700;
 	font-size: 19px;
@@ -1170,10 +1168,6 @@ section.client-centre {
 }
 .services-page .services .service .service-text ul li {
 	padding-left: 10px;
-	margin-bottom: 5px;
-}
-.services-page .services .service .service-text ul li:last-of-type {
-	margin-bottom: 0px;
 }
 .services-page .services .service .service-text ul li::marker {
 	color: #911019;
@@ -1192,14 +1186,15 @@ section.client-centre {
 
 /*Highlight when coming from home page*/
 .services-page .services .service.highlight {
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
-	border: 1px solid transparent;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 60%);
 }
 /*Hover effects*/
 .services-page .services .service:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
+/*.services-page .services .service:hover .service-image {
+	width: 35%;
+}*/
 .services-page .services .service:hover p {
 	color: #d7212e;
 }
@@ -1286,7 +1281,6 @@ section.client-centre {
 	}
 
 	/*SERVICES*/
-
 	.services .container-wrap .service-boxes .service {
 		width: 49%;
 	}
@@ -1335,17 +1329,14 @@ section.client-centre {
 	}
 
 	/*SERVICES PAGE*/
-	.services-page .services .service .service-image {
-		width: 50%;
-	}
 	.services-page .services .service .service-image img {
 		min-height: 350px;
 	}
 	.services-page .services .service .service-text {
-		padding: 20px 40px 20px calc(50% + 40px);
+		padding: 20px 40px 20px calc(30% + 40px);
 	}
 	.services-page .services .service.right .service-text {
-		padding: 20px calc(50% + 40px) 20px 40px;
+		padding: 20px calc(30% + 40px) 20px 40px;
 	}
 	/*OUR TEAM PAGE*/
 	.our-team .people .person {
@@ -1411,6 +1402,12 @@ section.client-centre {
 	.parallax-window .hero-container .solid-btn {
 		margin-left: 20px;
 	}
+
+	/*SERVICES*/
+	.services .container-wrap .service-boxes .service {
+		border: 1px solid #f5f5f5;
+	}
+
 	/*GET STARTED SECTION*/
 	.steps {
 		flex-direction: column;
@@ -1436,6 +1433,7 @@ section.client-centre {
 	.services-page .services .service {
 		margin-bottom: 15px;
 		min-height: 100%;
+		border: 1px solid #f5f5f5;
 	}
 	.services-page .services .service .service-image {
 		width: 100%;

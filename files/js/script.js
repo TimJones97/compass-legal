@@ -101,11 +101,11 @@ function bindVelocity(){
 					$(this).addClass('highlight');
 				}
 			});
-		}, 2000)
+		}, 2300)
 		// Remove the highlight shadow after 1 second
 		setTimeout(function(){
 			$('.services-page .service').removeClass('highlight');
-		}, 3000)
+		}, 3300)
 	}
   	// bind click event to all internal page anchors
   	$('a[href*="#"]').on('click', function (e) {
