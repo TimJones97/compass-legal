@@ -316,7 +316,7 @@ section {
 	color: #000;
 }
 .mobile-nav .contact-item dt i {
-	color: #3b3b3b;
+	color: #d7212e;
 }
 
 /*----------------BODY CONTAINER----------------*/
@@ -530,6 +530,7 @@ section {
 }
 .objectives .objectives-container .objective ul {
 	padding-inline-start: 0px;
+	margin-bottom: 0px;
 }
 .objectives .objectives-container .objective ul li {
 	font-size: 16px;
@@ -545,6 +546,9 @@ section {
 .objectives .objectives-container .objective p {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
+}
+.objectives .objectives-container .objective p:last-of-type {
+
 }
 .objectives .objectives-container .objective:hover {
 	border: 2px solid #acacac;
@@ -1109,14 +1113,14 @@ section.client-centre {
 	overflow: hidden;
 	margin-bottom: 30px;
 	transform: translateZ(0) perspective(999px);
+	min-height: 220px;
 	transition: all 0.5s ease;
-	min-height: 200px;
 }
 .services-page .services .service .service-image {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 350px;
+	width: 50%;
 	height: 100%;
 	overflow: hidden;
 	border-right: 3px solid #acacac;
@@ -1128,7 +1132,7 @@ section.client-centre {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	height: 100%;
-	min-height: 300px;
+	min-height: 400px;
 	width: auto;
 }
 .services-page .services .service .service-text {
@@ -1136,8 +1140,8 @@ section.client-centre {
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
-	min-height: 200px;
-	padding: 20px 40px 20px 390px;
+	min-height: 220px;
+	padding: 20px 40px 20px calc(50% + 40px);
 }
 .services-page .services .service .service-text p {
 	font-weight: 700;
@@ -1145,14 +1149,16 @@ section.client-centre {
 	color: #3b3b3b;
 }
 .services-page .services .service .service-text ul {
-	padding-inline-start: 0px;
-	list-style: none;
+	padding-inline-start: 10px;
+	margin-bottom: 0px;
+	list-style-position: outside;
+	list-style-type: "\00BB";
 }
-.services-page .services .service .service-text ul li::before {
-	content: "\00BB"; 
+.services-page .services .service .service-text ul li {
+	padding-left: 10px;
+}
+.services-page .services .service .service-text ul li::marker {
 	color: #911019;
-	margin-right: 10px;
-	font-size: 16px;
 }
 
 /*Right align some of the images for effect*/
@@ -1163,7 +1169,7 @@ section.client-centre {
 	border-left: 3px solid #acacac;
 }
 .services-page .services .service.right .service-text {
-	padding: 20px 390px 20px 40px;
+	padding: 20px calc(50% + 40px) 20px 40px;
 }
 
 /*Highlight when coming from home page*/
@@ -1296,8 +1302,19 @@ section.client-centre {
 	.services-page .services .service .service-image {
 		width: 50%;
 	}
+	.services-page .services .service .service-image img {
+		min-height: 350px;
+	}
+	.services-page .services .service .service-text {
+		padding: 20px 40px 20px calc(50% + 40px);
+	}
 	.services-page .services .service.right .service-text {
-		padding-right: calc(50% + 40px);
+		padding: 20px calc(50% + 40px) 20px 40px;
+	}
+	/*OUR TEAM PAGE*/
+	.our-team .people .person {
+		width: 48%;
+		margin-right: 2%;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -1368,7 +1385,7 @@ section.client-centre {
 	}
 	.steps .step {
 		width: 100%;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 	/*CONTACT SECTION*/
 	.contact .contact-container {
@@ -1383,6 +1400,9 @@ section.client-centre {
 		width: 100%;
 	}
 	/*SERVICES PAGE*/
+	.services-page .services .service {
+		margin-bottom: 15px;
+	}
 	.services-page .services .service .service-image {
 		width: 100%;
 		height: 150px;
@@ -1399,7 +1419,25 @@ section.client-centre {
 	}
 	.services-page .services .service .service-text,
 	.services-page .services .service.right .service-text {
-		padding: 170px 20px 20px;
+		padding: 170px 20px 30px;
+	}
+	.services-page .services .service .service-text p {
+		margin-bottom: 10px;
+	}
+
+	/*FOOTER*/
+	footer {
+		padding: 20px 0px 0px;
+	}
+	footer .tagline {
+	    margin-top: 5px;
+	    margin-bottom: 15px;
+	}
+	footer .copy-text {
+		margin-top: 15px;
+	}
+	footer .logo {
+		width: 200px;
 	}
 }
 @media only screen and (max-width: 479px){
@@ -1437,9 +1475,25 @@ section.client-centre {
 		height: 20vh;
 		min-height: 300px;
 	}
+	/*OBJECTIVES SECTION*/
+	.objectives .objectives-container .objective {
+		padding: 20px;
+	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
 	    width: 100%;
-	    margin-bottom: 10px;
-   }
+	    margin-bottom: 15px;
+   	}
+
+	/*OUR TEAM PAGE*/
+	.our-team .people .person {
+		width: 100%;
+		margin-right: unset;
+	}
+
+	/*CLIENT CENTRE PAGE*/
+	.client-centre .client-links .page {
+		width: 100%;
+		margin-right: unset;
+	}
 }
