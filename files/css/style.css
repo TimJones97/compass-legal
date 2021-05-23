@@ -11,6 +11,9 @@ body {
 * {
 	-webkit-font-smoothing: antialiased;
 }
+body.no-anim * {
+  transition: none !important;
+}
 *:focus,
 *:hover {
 	outline: none !important;
@@ -385,7 +388,8 @@ main {
 }
 
 /*Animate class added after load*/
-.parallax-window .banner-text.animate-finish span {
+.parallax-window .banner-text.animate-finish span,
+.parallax-window .banner-text.animate-finish + .solid-btn {
 	animation: unset;
 	opacity: 1;
 }
@@ -402,7 +406,7 @@ main {
 }
 /*Animate the banner text and button on load*/
 .parallax-window .banner-text.animate span:not(.first),
-.parallax-window .solid-btn {
+.parallax-window .banner-text.animate + .solid-btn {
 	animation: fadeIn 0.7s linear forwards;
 }
 /*
@@ -773,9 +777,7 @@ section {
 }
 .contact-item dl {
 	padding-left: 30px;
-}
-.contact-item.parking dd {
-	margin-left: -25px;
+	margin-bottom: 0px;
 }
 .contact-item dt {
 	font-weight: 700;
@@ -791,7 +793,7 @@ section {
 }
 /*Hours*/
 .contact-item table {
-	margin-left: 5px;
+	margin-left: 30px;
 }
 
 /*----------------FOOTER SECTION----------------*/
@@ -877,7 +879,7 @@ footer .footer-video__container video {
 .hero.hero-sml,
 .hero.hero-sml .parallax-window {
 	height: 50vh;
-	min-height: 500px;
+	min-height: 420px;
 }
 
 section.our-team {
@@ -971,62 +973,123 @@ section.client-centre {
 
 /*----------------CONTACT PAGE----------------*/
 
-.contact-page {
-	background: #f5f5f5;
+.contact-options {
+	background: #1b1b1b;
 }
-.contact-page .contact-container {
+.contact-options h1 {
+	color: #fff;
+}
+.contact-options .contact-container {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 }
-.contact-page .contact-form__container,
-.contact-page .contact-links {
+/*Left side contact info*/
+.contact-options a.maps-link__anchor {
 	width: 49%;
 }
-/*CONTACT FORM*/
-.contact-page .contact-form {
-	width: 400px;
-}
-.contact-page .contact-form * {
-	display: block;
-}
-.contact-page .contact-form input,
-.contact-page .contact-form textarea {
-	border-radius: 6px;
-	border: 1px solid #acacac;
+.contact-options .contact-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	transition: all 0.5s ease;
+	border: 2px solid transparent;
 	width: 100%;
-	padding: 5px 10px;
+	transform: translateZ(0) perspective(999px);
 }
-.contact-page .contact-form textarea {
-	height: 150px;
+/*Make all the text color white*/
+.contact-options .contact-details i,
+.contact-options .contact-details a,
+.contact-options .contact-details td,
+.contact-options .contact-details dd {
+	color: #fff;
 }
-.contact-page .contact-form label {
-	margin-top: 15px;
-	margin-bottom: 5px;
+.contact-options .contact-details a:hover {
+	color: #acacac;
 }
-.contact-page .contact-form .transparent-btn {
-	display: block;
-	margin: 0 auto;
-	margin-top: 30px;
-	width: 130px;
+/*Right side contact cards*/
+.contact-options .contact-cards {
+	display: flex;
+	flex-direction: column;
+	width: 49%;
 }
-.contact-page .contact-links .contact-item {
+.contact-options .contact-cards .contact-item {
 	margin-bottom: 15px;
-	background: #fff;
+	background: rgba(0, 0, 0, 0.2);
 	border-radius: 6px;
-	height: 180px;
+	height: 100px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	transform: translateZ(0) perspective(999px);
 	transition: all 0.5s ease;
-	cursor: pointer;
-	text-align: center;
+	width: 100%;
+	border: 2px solid transparent;
 }
-.contact-page .contact-links .contact-item p {
-	color: #000;
+/*Don't add margin to last card item*/
+.contact-options .contact-cards .contact-item:last-of-type {
+	margin-bottom: 0px;
 }
-.contact-page .contact-links .contact-item p i {
-	margin-right: 10px;
+.contact-options .contact-cards .contact-item .text-container {
+	margin: 0 auto;
+	width: 295px;
+	text-align: left;
+}
+.contact-options .contact-cards .contact-item p {
+	color: #fff;
+	margin-bottom: 10px;
+}
+.contact-options .contact-cards .contact-item p.details {
+	color: #acacac;
+	margin-bottom: 0px;
+	padding-left: 30px;
+}
+.contact-options .contact-cards .contact-item p i {
+	margin-right: 13px;
+	color: #d9232f;
+}
+
+/*Second div - contact form*/
+.contact-form__section {
+	background: #f5f5f5;
+}
+.contact-form__section .contact-container {
+	display: flex;
+	justify-content: space-between;
+}
+.contact-form__section .contact-form__container,
+.contact-form__section #map {
+	width: 49%;
+}
+/*CONTACT FORM*/
+.contact-form__section .contact-form * {
+	display: block;
+}
+.contact-form__section .contact-form input,
+.contact-form__section .contact-form textarea {
+	border-radius: 6px;
+	border: unset;
+	width: 100%;
+	padding: 5px 10px;
+	margin-bottom: 15px;
+}
+.contact-form__section .contact-form textarea {
+	height: 250px;
+}
+.contact-form__section .contact-form .transparent-btn {
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 130px;
+}
+
+/*Hover Effects*/
+
+.contact-options .contact-details:hover,
+.contact-options .contact-cards .contact-item:hover {
+	border: 2px solid #acacac;
+	transform: translateZ(0) perspective(999px) scale3d(1.01, 1.01, 1);
 }
 
 
@@ -1067,6 +1130,16 @@ section.client-centre {
 		width: 200px;
 		height: auto;
 	}
+	/*MOBILE NAV*/
+	.mobile-nav .logo {
+	    top: 20px;
+	}
+	.mobile-nav .close-btn {
+	    top: 30px;
+	    right: 30px;
+	    width: 17px;
+	    height: 17px;
+	}
 	/*HERO STYLES*/
 	.parallax-window .banner-text {
 	    text-align: left;
@@ -1083,6 +1156,47 @@ section.client-centre {
 	.parallax-window .banner-text.animate-finish:hover span:nth-child(5), 
 	.parallax-window .banner-text.animate-finish:hover span:nth-child(7) {
 		color: #fff !important;
+	}
+	.hero.hero-sml, .hero.hero-sml .parallax-window {
+		height: 30vh;
+		min-height: 400px;
+	}
+	.parallax-window .hero-container {
+	    margin-top: 20px;
+	}
+	/*STEPS*/
+	.steps .step {
+	    padding: 40px 20px 20px;
+	}
+	/*CONTACT*/
+	.contact-details {
+		padding: 20px;
+	}
+	/*CONTACT PAGE*/
+
+	/*Contact details*/
+	.contact-options .contact-container {
+		display: block;
+	}
+	.contact-options a.maps-link__anchor {
+		width: 100%;
+		margin-bottom: 15px;
+		display: block;
+	}
+	.contact-options .contact-cards {
+		width: 100%;
+	}
+
+	/*Contact form and map*/
+	.contact-form__section .contact-container {
+		flex-direction: column-reverse;
+	}
+	.contact-form__section .contact-form__container, 
+	.contact-form__section #map {
+		width: 100%;
+	}
+	.contact-form__section .contact-form__container {
+		margin-bottom: 30px;
 	}
 }
 @media only screen and (max-width: 767px){
@@ -1102,18 +1216,6 @@ section.client-centre {
 	.mobile-nav {
 		width: 100%;
 		right: calc(-100% - 5px);
-	}
-	.mobile-nav .logo {
-	    top: 20px;
-	}
-	.mobile-nav .close-btn {
-	    top: 30px;
-	    right: 30px;
-	    width: 17px;
-	    height: 17px;
-	}
-	.mobile-nav .contact-details {
-		display: none;
 	}
 	.mobile-nav .vertical-align {
 	    padding-bottom: 50px;
@@ -1211,6 +1313,10 @@ section.client-centre {
 	.parallax-window .banner-text span:nth-child(7) {
 		display: unset;
 	}
+	.hero.hero-sml, .hero.hero-sml .parallax-window {
+		height: 20vh;
+		min-height: 300px;
+	}
 	/*SERVICES SECTION*/
 	.services .container-wrap .service-boxes .service {
 	    width: 100%;
@@ -1219,7 +1325,7 @@ section.client-centre {
 	}
 	/*CONTACT*/
 	.contact-details {
-	    padding: 20px;
+	    padding: 10px;
 	    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 	}
 	#map {

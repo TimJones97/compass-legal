@@ -1,15 +1,8 @@
 function smallNavOnScroll(index=false){
 	var offset = 5;
-	// If on homepage
-	if(index){
-		offset = $(window).height() * 0.2;
-	}
-	else {
-		offset = 200;
-	}
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
-	if(scrollTop > 5 || isMobile()){
+	if(scrollTop > offset || isMobile()){
 		$('.navbar').addClass('opaque');
 	}
 	else {
@@ -55,7 +48,7 @@ function setCopyrightYear(){
 	$(".year").text(theDate.getFullYear());
 }
 function isHomepage(){
-	var page = window.title;
+	var page = document.title;
 	// If page title matches homepage title, return true
 	if(page == 'Brisbane & Gold Coast Lawyers | Compass Legal Solutions'){
 		return true;
@@ -70,7 +63,7 @@ function animateHeroText(){
 	setTimeout(function(){
 		$('.banner-text').removeClass('animate');
 		$('.banner-text').addClass('animate-finish');
-	}, 4200)
+	}, 4700)
 }
 function bindVelocity(){
   // bind click event to all internal page anchors
@@ -103,6 +96,27 @@ function closeMenu(){
 	$('.mobile-nav').removeClass('open');
 	$('.body-overlay').removeClass('show');
 }
+function setActiveNavItem(){
+	var title = document.title,
+		pageHref;
+	if(title != null){
+		// Get first word of title
+		title = title.split(' ')[0].toLowerCase();
+	}
+	$('nav .nav-item').each(function(){
+		// Get the anchor element in each nav item and split the href
+		// attribute by / and - to get the page name
+		pageHref = $(this).children().first().attr('href').split('/')[1];
+		if(pageHref != null){
+			// Get the first word of page name
+			pageHref = pageHref.split('-')[0];
+
+			if(title == pageHref){
+				$(this).addClass('active');
+			}
+		}
+	});
+}
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	if($(window).width() > 1400){
@@ -121,8 +135,8 @@ $(document).ready(function(){
 	bindVelocity();
 	smallNavOnScroll(isHomepage());
 	toggleMobileNav();
+	setActiveNavItem();
 	setCopyrightYear();
-	// showHiddenFooterScroll();
 	addBodyFooterMargin();
 	setTimeout(function(){
 		addBodyFooterMargin();
@@ -130,8 +144,10 @@ $(document).ready(function(){
 	new universalParallax().init({
 	  speed: 1.8
 	});
-	$('body').imagesLoaded( function() {
-	  	// images have loaded
+	// Wait for page to load before enabling transitions 
+	// to stop elements from showing too early
+	setTimeout(function(){
+  		$("body").removeClass("no-anim");
 		animateHeroText();
-	});
+	}, 100);
 });
