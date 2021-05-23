@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
 	font-family: 'Oswald', sans-serif;
 	transition: font-size 0.5s ease;
 }
-p, a, label {
+p, a, label, li {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
@@ -579,6 +579,7 @@ section.services {
 	cursor: pointer;
 	transform: translateZ(0) perspective(999px);
 	background: #fff;
+	border: 1px solid #f5f5f5;
 }
 .services .container-wrap .service-boxes .service .image-container {
 	position: absolute;
@@ -1120,6 +1121,7 @@ section.client-centre {
 	transform: translateZ(0) perspective(999px);
 	min-height: 220px;
 	transition: all 0.5s ease;
+	border: 1px solid #f5f5f5;
 }
 .services-page .services .service .service-image {
 	position: absolute;
@@ -1509,5 +1511,10 @@ section.client-centre {
 	.client-centre .client-links .page {
 		width: 100%;
 		margin-right: unset;
+	}
+
+	/*CONTACT PAGE*/
+	.contact-options .contact-details .contact-item {
+	    width: 100%;
 	}
 }
