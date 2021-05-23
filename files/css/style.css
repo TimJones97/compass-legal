@@ -187,7 +187,7 @@ section {
 	background: #fdfdfd;
 	font-size: inherit;
     font-weight: inherit;
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 75%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .navbar.opaque .nav-link {
 	color: #000;
@@ -330,12 +330,12 @@ main {
 
 .hero {
 	width: 100%;
-	height: 90vh;
+	height: 100vh;
     border-top: unset;
     transition: unset;
 }
 .parallax-window {
-	height: 90vh;
+	height: 100vh;
     background: #000;
     position: relative;
     z-index: 2;
@@ -405,9 +405,11 @@ main {
 	color: rgba(255, 255, 255, 0.1) !important;
 }
 /*Animate the banner text and button on load*/
-.parallax-window .banner-text.animate span:not(.first),
-.parallax-window .banner-text.animate + .solid-btn {
+.parallax-window .banner-text.animate span:not(.first) {
 	animation: fadeIn 0.7s linear forwards;
+}
+.parallax-window .banner-text.animate + .solid-btn {
+	animation: fadeIn 0.4s linear forwards;
 }
 /*
 	"Legal results through"
@@ -550,7 +552,7 @@ section {
 }
 /*----------------SERVICES SECTION----------------*/
 
-.services {
+section.services {
 	background: #f5f5f5;
 }
 .services .container-wrap .service-boxes {
@@ -628,7 +630,7 @@ section {
 	margin: 0 auto;
 	border: 1px solid #d7212e;
 	background: transparent;
-	margin-top: 20px;
+	margin-top: 10px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	border-radius: 50px;
@@ -724,8 +726,8 @@ section {
 }
 .solid-btn:hover {
 	color: #fff !important;
-	border: 1px solid rgb(145 16 25);
-	background: rgb(145 16 25);
+	border: 1px solid #911019;
+	background: #911019;
 }
 
 /*----------------CONTACT SECTION----------------*/
@@ -782,7 +784,6 @@ section {
 .contact-item dt {
 	font-weight: 700;
 	position: relative;
-	color: #d9232f;
 	margin-bottom: 5px;
 }
 .contact-item dt i {
@@ -790,6 +791,7 @@ section {
 	left: -25px;
 	top: 50%;
 	transform: translate(0%, -50%);
+	color: #d9232f;
 }
 /*Hours*/
 .contact-item table {
@@ -805,7 +807,7 @@ footer {
 	bottom: 0;
 	opacity: 1;
 	z-index: -1;
-	padding: 20px 0px;
+	padding: 10px 0px;
 }
 footer * {
 	color: #9b9b9b;
@@ -998,10 +1000,13 @@ section.client-centre {
 	width: 100%;
 	transform: translateZ(0) perspective(999px);
 }
-/*Make all the text color white*/
-.contact-options .contact-details i,
+.contact-options .contact-details .contact-item {
+	margin-bottom: 30px;
+}
+/*Make all text color white*/
 .contact-options .contact-details a,
 .contact-options .contact-details td,
+.contact-options .contact-details dt,
 .contact-options .contact-details dd {
 	color: #fff;
 }
@@ -1092,6 +1097,87 @@ section.client-centre {
 	transform: translateZ(0) perspective(999px) scale3d(1.01, 1.01, 1);
 }
 
+/*----------------SERVICES PAGE----------------*/
+
+.services-page {
+	background: #f5f5f5;
+}
+.services-page .services .service {
+	position: relative;
+	background: #fff;
+	border-radius: 6px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	transform: translateZ(0) perspective(999px);
+	transition: all 0.5s ease;
+	min-height: 200px;
+}
+.services-page .services .service .service-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 350px;
+	height: 100%;
+	overflow: hidden;
+	border-right: 3px solid #acacac;
+	transition: border 0.5s ease;
+}
+.services-page .services .service .service-image img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	min-height: 300px;
+	width: auto;
+}
+.services-page .services .service .service-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	min-height: 200px;
+	padding: 20px 40px 20px 390px;
+}
+.services-page .services .service .service-text p {
+	font-weight: 700;
+	font-size: 19px;
+	color: #3b3b3b;
+}
+.services-page .services .service .service-text ul {
+	padding-inline-start: 0px;
+	list-style: none;
+}
+.services-page .services .service .service-text ul li::before {
+	content: "\00BB"; 
+	color: #911019;
+	margin-right: 10px;
+	font-size: 16px;
+}
+
+/*Right align some of the images for effect*/
+.services-page .services .service.right .service-image {
+	left: unset;
+	right: 0;
+	border-right: unset;
+	border-left: 3px solid #acacac;
+}
+.services-page .services .service.right .service-text {
+	padding: 20px 390px 20px 40px;
+}
+
+/*Highlight when coming from home page*/
+.services-page .services .service.highlight {
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
+/*Hover effects*/
+.services-page .services .service:hover {
+	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
+.services-page .services .service:hover .service-image {
+	border-color: #d7212e;
+}
 
 /*------------MEDIA QUERIES-----------*/
 
@@ -1183,6 +1269,9 @@ section.client-centre {
 		margin-bottom: 15px;
 		display: block;
 	}
+	.contact-options .contact-details .contact-item {
+		margin-bottom: 0px;
+	}
 	.contact-options .contact-cards {
 		width: 100%;
 	}
@@ -1195,8 +1284,20 @@ section.client-centre {
 	.contact-form__section #map {
 		width: 100%;
 	}
+	.contact-form__section #map {
+		height: 250px;
+	}
 	.contact-form__section .contact-form__container {
+		margin-top: 30px;
 		margin-bottom: 30px;
+	}
+
+	/*SERVICES PAGE*/
+	.services-page .services .service .service-image {
+		width: 50%;
+	}
+	.services-page .services .service.right .service-text {
+		padding-right: calc(50% + 40px);
 	}
 }
 @media only screen and (max-width: 767px){
@@ -1280,6 +1381,25 @@ section.client-centre {
 	}
 	.contact-details {
 		width: 100%;
+	}
+	/*SERVICES PAGE*/
+	.services-page .services .service .service-image {
+		width: 100%;
+		height: 150px;
+		border: unset;
+		border-bottom: 3px solid #acacac;
+	}
+	.services-page .services .service.right .service-image {
+		border: unset;
+		border-bottom: 3px solid #acacac;
+	}
+	.services-page .services .service .service-image img {
+		width: 100%;
+		height: auto;
+	}
+	.services-page .services .service .service-text,
+	.services-page .services .service.right .service-text {
+		padding: 170px 20px 20px;
 	}
 }
 @media only screen and (max-width: 479px){

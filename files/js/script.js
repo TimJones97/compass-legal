@@ -65,32 +65,73 @@ function animateHeroText(){
 		$('.banner-text').addClass('animate-finish');
 	}, 4700)
 }
+function getUrlParameter(sParam){
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
 function bindVelocity(){
-  // bind click event to all internal page anchors
-  $('a[href*="#"]').on('click', function (e) {
-	var target = $(this).attr('href');
-	// If the target is not empty
-    if(target != '#'){
-		if(isMobile()){
-			// scroll to each target
-		    $(target).velocity("scroll", { 
-		      duration: 1000,
-		      offset: -79
-		    });
-		}
-		else {
-		    $(target).velocity("scroll", { 
-		      duration: 1000,
-		      offset: -110
-		    });
-		}
-		closeMenu();
-    }
-    else {
-    	e.preventDefault();
-    	e.stopPropagation();
-    }
-  });
+	var serviceCategory = getUrlParameter('go'),
+		serviceCategoryAnchor = "#";
+		serviceID = "";
+	if(getUrlParameter('go') != undefined){
+		// Add the hash symbol to the category string 
+		// to make it a target anchor
+		serviceCategoryAnchor = serviceCategoryAnchor + serviceCategory;
+		setTimeout(function(){
+			$(serviceCategoryAnchor).velocity("scroll", { 
+			  duration: 1000,
+			  offset: -150
+			});			
+		}, 1000)
+		// Highlight the selected category with a box shadow
+		setTimeout(function(){
+			$('.services-page .service').each(function(){
+				serviceID = $(this).attr('id')
+				if(serviceID == serviceCategory){
+					$(this).addClass('highlight');
+				}
+			});
+		}, 2000)
+		// Remove the highlight shadow after 1 second
+		setTimeout(function(){
+			$('.services-page .service').removeClass('highlight');
+		}, 3000)
+	}
+  	// bind click event to all internal page anchors
+  	$('a[href*="#"]').on('click', function (e) {
+		var target = $(this).attr('href');
+		// If the target is not empty
+	    if(target != '#'){
+			if(isMobile()){
+				// scroll to each target
+			    $(target).velocity("scroll", { 
+			      duration: 1000,
+			      offset: -79
+			    });
+			}
+			else {
+			    $(target).velocity("scroll", { 
+			      duration: 1000,
+			      offset: -110
+			    });
+			}
+			closeMenu();
+	    }
+	    else {
+	    	e.preventDefault();
+	    	e.stopPropagation();
+	    }
+	  });
 }
 function closeMenu(){
 	$('.mobile-nav').removeClass('open');
@@ -106,11 +147,10 @@ function setActiveNavItem(){
 	$('nav .nav-item').each(function(){
 		// Get the anchor element in each nav item and split the href
 		// attribute by / and - to get the page name
-		pageHref = $(this).children().first().attr('href').split('/')[1];
+		pageHref = $(this).children().first().attr('href').split('/')[2]; // Affected by /compass-legal URL, change to 1 after publishing
 		if(pageHref != null){
 			// Get the first word of page name
 			pageHref = pageHref.split('-')[0];
-
 			if(title == pageHref){
 				$(this).addClass('active');
 			}
