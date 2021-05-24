@@ -157,6 +157,9 @@ function setActiveNavItem(){
 		}
 	});
 }
+function fadeInParallax(){
+	
+}
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	if($(window).width() > 1400){
@@ -171,23 +174,25 @@ $(window).resize(function(){
 $(window).scroll(function(){
 	smallNavOnScroll(isHomepage());
 });
+$(window).on('load', function(){
+    $('.parallax').addClass('loaded');
+    // Wait for page to load before enabling transitions 
+    // to stop elements from showing too early
+	$("body").removeClass("no-anim");
+	animateHeroText();
+});
 $(document).ready(function(){
+	new universalParallax().init({
+	  speed: 1.8
+	});
 	bindVelocity();
 	smallNavOnScroll(isHomepage());
 	toggleMobileNav();
 	setActiveNavItem();
 	setCopyrightYear();
 	addBodyFooterMargin();
+	fadeInParallax();
 	setTimeout(function(){
 		addBodyFooterMargin();
 	}, 200)
-	new universalParallax().init({
-	  speed: 1.8
-	});
-	// Wait for page to load before enabling transitions 
-	// to stop elements from showing too early
-	setTimeout(function(){
-  		$("body").removeClass("no-anim");
-		animateHeroText();
-	}, 100);
 });

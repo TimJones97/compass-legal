@@ -339,7 +339,7 @@ main {
 }
 .parallax-window {
 	height: 100vh;
-    background: #000;
+    background: #fff;
     position: relative;
     z-index: 2;
 }
@@ -486,9 +486,12 @@ main {
 	transform-style: preserve-3d;
 	transform: translateZ(0px) !important;
 	width: 100%;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+.parallax.loaded {
 	opacity: 1;
 }
-
 /*----------------ABOUT SECTION----------------*/
 
 section {
