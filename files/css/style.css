@@ -1299,10 +1299,10 @@ section.client-centre {
 	.contact-form .contact-container {
 		display: block;
 	}
-	.contact-form a.maps-link__anchor {
+	.contact-form .contact-form__container {
 		width: 100%;
-		margin-bottom: 15px;
-		display: block;
+		margin-top: 30px;
+		margin-bottom: 30px;
 	}
 	.contact-form .contact-details {
 		display: block;
@@ -1319,15 +1319,14 @@ section.client-centre {
 	.contact-location .contact-container {
 		flex-direction: column-reverse;
 	}
-	.contact-location .contact-form__container, 
+	.contact-location a.maps-link__anchor {
+		width: 100%;
+		margin-bottom: 15px;
+		display: block;
+	}
 	.contact-location #map {
 		width: 100%;
-	}
-	.contact-location #map {
 		height: 250px;
-	}
-	.contact-location .contact-form__container {
-		margin-top: 30px;
 		margin-bottom: 30px;
 	}
 
