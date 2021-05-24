@@ -988,56 +988,51 @@ section.client-centre {
 
 /*----------------CONTACT PAGE----------------*/
 
-.contact-options {
+/*First div - contact form and details*/
+.contact-form {
 	background: #1b1b1b;
 }
-.contact-options h1 {
+.contact-form h1 {
 	color: #fff;
 }
-.contact-options .contact-container {
+.contact-form .contact-container {
 	display: flex;
 	justify-content: space-between;
 }
-/*Left side contact info*/
-.contact-options a.maps-link__anchor {
+/*Left side enquiry form*/
+.contact-form .contact-form__container {
 	width: 49%;
 }
-.contact-options .contact-details {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.2);
-	transition: all 0.5s ease;
-	border: 2px solid transparent;
+.contact-form .contact-form__element * {
+	display: block;
+}
+.contact-form .contact-form__element input,
+.contact-form .contact-form__element textarea {
+	border-radius: 6px;
+	border: unset;
 	width: 100%;
-	transform: translateZ(0) perspective(999px);
-}
-.contact-options .contact-details .contact-item {
-	margin-bottom: 10px;
-}
-.contact-options .contact-details hr {
-	border-top: 1px solid #6b6b6b;
-	width: 100%;
-	margin-bottom: 30px;
-}
-/*Make all text color white*/
-.contact-options .contact-details a,
-.contact-options .contact-details td,
-.contact-options .contact-details dt,
-.contact-options .contact-details dd {
+	padding: 5px 10px;
+	margin-bottom: 15px;
+	background: #3b3b3b;
 	color: #fff;
 }
-.contact-options .contact-details a:hover {
-	color: #acacac;
+.contact-form .contact-form__element textarea {
+	height: 250px;
 }
+.contact-form .contact-form__element .solid-btn {
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 130px;
+}
+
 /*Right side contact cards*/
-.contact-options .contact-cards {
+.contact-form .contact-cards {
 	display: flex;
 	flex-direction: column;
 	width: 49%;
 }
-.contact-options .contact-cards .contact-item {
+.contact-form .contact-cards .contact-item {
 	margin-bottom: 15px;
 	background: rgba(0, 0, 0, 0.2);
 	border-radius: 6px;
@@ -1051,68 +1046,73 @@ section.client-centre {
 	border: 2px solid transparent;
 }
 /*Don't add margin to last card item*/
-.contact-options .contact-cards .contact-item:last-of-type {
+.contact-form .contact-cards .contact-item:last-of-type {
 	margin-bottom: 0px;
 }
-.contact-options .contact-cards .contact-item .text-container {
+.contact-form .contact-cards .contact-item .text-container {
 	margin: 0 auto;
 	width: 295px;
 	text-align: left;
 }
-.contact-options .contact-cards .contact-item p {
+.contact-form .contact-cards .contact-item p {
 	color: #fff;
 	margin-bottom: 10px;
 }
-.contact-options .contact-cards .contact-item p.details {
+.contact-form .contact-cards .contact-item p.details {
 	color: #acacac;
 	margin-bottom: 0px;
 	padding-left: 30px;
 }
-.contact-options .contact-cards .contact-item p i {
+.contact-form .contact-cards .contact-item p i {
 	margin-right: 13px;
 	color: #d9232f;
 }
 
-/*Second div - contact form*/
-.contact-form__section {
+/*Hover Effects*/
+.contact-form .contact-cards .contact-item:hover {
+	border: 2px solid #acacac;
+	transform: translateZ(0) perspective(999px) scale3d(1.01, 1.01, 1);
+}
+
+/*Second div - map and address details*/
+.contact-location {
 	background: #f5f5f5;
 }
-.contact-form__section .contact-container {
+.contact-location a.maps-link__anchor {
+	width: 49%;
+}
+.contact-location .contact-container {
 	display: flex;
 	justify-content: space-between;
 }
-.contact-form__section .contact-form__container,
-.contact-form__section #map {
-	width: 49%;
-}
-/*CONTACT FORM*/
-.contact-form__section .contact-form * {
-	display: block;
-}
-.contact-form__section .contact-form input,
-.contact-form__section .contact-form textarea {
-	border-radius: 6px;
-	border: unset;
+
+/*Left side location information*/
+.contact-location .contact-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	transition: all 0.5s ease;
+	border: 2px solid transparent;
 	width: 100%;
-	padding: 5px 10px;
-	margin-bottom: 15px;
+	transform: translateZ(0) perspective(999px);
 }
-.contact-form__section .contact-form textarea {
-	height: 250px;
+.contact-location .contact-details .contact-item {
+	margin-bottom: 10px;
 }
-.contact-form__section .contact-form .transparent-btn {
-	display: block;
-	margin: 0 auto;
-	margin-top: 30px;
-	width: 130px;
+.contact-location .contact-details hr {
+	border-top: 1px solid #6b6b6b;
+	width: 100%;
+	margin-bottom: 30px;
+}
+/*Make all text color white*/
+.contact-location .contact-details a:hover {
+	color: #acacac;
 }
 
-/*Hover Effects*/
-
-.contact-options .contact-details:hover,
-.contact-options .contact-cards .contact-item:hover {
-	border: 2px solid #acacac;
-	transform: translateZ(0) perspective(999px) scale3d(1.01, 1.01, 1);
+/*Right side map*/
+.contact-location #map {
+	width: 49%;
 }
 
 /*----------------SERVICES PAGE----------------*/
@@ -1296,37 +1296,37 @@ section.client-centre {
 	/*CONTACT PAGE*/
 
 	/*Contact details*/
-	.contact-options .contact-container {
+	.contact-form .contact-container {
 		display: block;
 	}
-	.contact-options a.maps-link__anchor {
+	.contact-form a.maps-link__anchor {
 		width: 100%;
 		margin-bottom: 15px;
 		display: block;
 	}
-	.contact-options .contact-details {
+	.contact-form .contact-details {
 		display: block;
 	}
-	.contact-options .contact-details .contact-item {
+	.contact-form .contact-details .contact-item {
 		width: 420px;
 		margin-bottom: 30px;
 	}
-	.contact-options .contact-cards {
+	.contact-form .contact-cards {
 		width: 100%;
 	}
 
 	/*Contact form and map*/
-	.contact-form__section .contact-container {
+	.contact-location .contact-container {
 		flex-direction: column-reverse;
 	}
-	.contact-form__section .contact-form__container, 
-	.contact-form__section #map {
+	.contact-location .contact-form__container, 
+	.contact-location #map {
 		width: 100%;
 	}
-	.contact-form__section #map {
+	.contact-location #map {
 		height: 250px;
 	}
-	.contact-form__section .contact-form__container {
+	.contact-location .contact-form__container {
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
@@ -1534,7 +1534,7 @@ section.client-centre {
 	}
 
 	/*CONTACT PAGE*/
-	.contact-options .contact-details .contact-item {
+	.contact-form .contact-details .contact-item {
 	    width: 100%;
 	}
 
