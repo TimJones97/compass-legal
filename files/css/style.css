@@ -314,6 +314,7 @@ section {
 	padding-left: 30px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
+	margin-bottom: 15px;
 }
 .mobile-nav .contact-item a {
 	color: #6b6b6b;
@@ -1431,6 +1432,7 @@ section.client-centre {
 		width: 100%;
 		padding: 25px 15px;
 	}
+
 	/*SERVICES PAGE*/
 	.services-page .services .service {
 		margin-bottom: 15px;
