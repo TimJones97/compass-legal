@@ -361,7 +361,6 @@ main {
 }
 .parallax-window .hero-container .solid-btn {
 	margin-top: 50px;
-	opacity: 0;
 }
 .parallax-window .banner-text {
 	width: calc(100% - 40px);
@@ -381,83 +380,20 @@ main {
 .parallax-window .banner-text span {
 	position: relative;
 	color: #fff !important;
-	opacity: 0;
 	transition: color 0.5s ease;
 }
-/* 
-	"Legal results through"
-*/
-.parallax-window .banner-text span:nth-child(1) {
-	opacity: 1;
-}
 
-/*Animate class added after load*/
-.parallax-window .banner-text.animate-finish span,
-.parallax-window .banner-text.animate-finish + .solid-btn {
-	animation: unset;
-	opacity: 1;
-}
 /*
 	Hides the following strings on hover:
 
 	"Legal results through" + "," + "and" + ."
 */
-.parallax-window .banner-text.animate-finish:hover span:nth-child(1),
-.parallax-window .banner-text.animate-finish:hover span:nth-child(3),
-.parallax-window .banner-text.animate-finish:hover span:nth-child(5),
-.parallax-window .banner-text.animate-finish:hover span:nth-child(7){
+/*.parallax-window .banner-text:hover span:nth-child(1),
+.parallax-window .banner-text:hover span:nth-child(3),
+.parallax-window .banner-text:hover span:nth-child(5),
+.parallax-window .banner-text:hover span:nth-child(7){
 	color: rgba(255, 255, 255, 0.1) !important;
-}
-/*Animate the banner text and button on load*/
-.parallax-window .banner-text.animate span:not(.first) {
-	animation: fadeIn 0.7s linear forwards;
-}
-.parallax-window .banner-text.animate + .solid-btn {
-	animation: fadeIn 0.4s linear forwards;
-}
-/*
-	"Legal results through"
-*/
-/*.parallax-window .banner-text.animate span:nth-child(1) {
-	animation-delay: 0.2s;
 }*/
-/*
-	"integrity" + ","
-*/
-.parallax-window .banner-text.animate span:nth-child(2),
-.parallax-window .banner-text.animate span:nth-child(3) {
-	animation-delay: 1s;
-}
-/*
-	"teamwork"
-*/
-.parallax-window .banner-text.animate span:nth-child(4) {
-	animation-delay: 1.8s;
-}
-/*
-	"and"
-*/
-.parallax-window .banner-text.animate span:nth-child(5) {
-	animation-delay: 2.8s;
-}
-/*
-	"open communication" + "."
-*/
-.parallax-window .banner-text.animate span:nth-child(6),
-.parallax-window .banner-text.animate span:nth-child(7) {
-	animation-delay: 3.2s;
-}
-.parallax-window .banner-text.animate + .solid-btn {
-	animation-delay: 4s;
-}
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
 @keyframes showColor {
 	0% {
 		color: rgba(255, 255, 255, 0);

@@ -57,14 +57,6 @@ function isHomepage(){
 		return false;
 	}
 }
-function animateHeroText(){
-	$('.banner-text').addClass('animate');
-	// Wait 4.2s for animation to complete
-	setTimeout(function(){
-		$('.banner-text').removeClass('animate');
-		$('.banner-text').addClass('animate-finish');
-	}, 4700)
-}
 function getUrlParameter(sParam){
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -157,9 +149,6 @@ function setActiveNavItem(){
 		}
 	});
 }
-function fadeInParallax(){
-	
-}
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	if($(window).width() > 1400){
@@ -179,7 +168,6 @@ $(window).on('load', function(){
     // Wait for page to load before enabling transitions 
     // to stop elements from showing too early
 	$("body").removeClass("no-anim");
-	animateHeroText();
 });
 $(document).ready(function(){
 	new universalParallax().init({
