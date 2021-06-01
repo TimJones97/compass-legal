@@ -167,6 +167,7 @@ $(window).scroll(function(){
 	smallNavOnScroll(isHomepage());
 });
 $(window).on('load', function(){
+	fadeInParallax();
     // Wait for page to load before enabling transitions 
     // to stop elements from showing too early
 	$("body").removeClass("no-anim");
@@ -181,7 +182,6 @@ $(document).ready(function(){
 	setActiveNavItem();
 	setCopyrightYear();
 	addBodyFooterMargin();
-	fadeInParallax();
 	setTimeout(function(){
 		addBodyFooterMargin();
 	}, 200)
