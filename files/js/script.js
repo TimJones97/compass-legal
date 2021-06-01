@@ -149,6 +149,9 @@ function setActiveNavItem(){
 		}
 	});
 }
+function fadeInParallax(){
+    $('.parallax').addClass('loaded');
+}
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
 	if($(window).width() > 1400){
@@ -164,7 +167,6 @@ $(window).scroll(function(){
 	smallNavOnScroll(isHomepage());
 });
 $(window).on('load', function(){
-    $('.parallax').addClass('loaded');
     // Wait for page to load before enabling transitions 
     // to stop elements from showing too early
 	$("body").removeClass("no-anim");
