@@ -204,6 +204,7 @@ section {
 }
 .navbar.opaque .nav-item .solid-btn:hover {
 	border: 1px solid #d7212e;
+	background: #911019;
 }
 .navbar.opaque .navbar-brand p,
 .navbar.opaque .navbar-brand p span {
@@ -343,7 +344,9 @@ main {
     background: #fff;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
+.blur-preview,
 .parallax-overlay,
 .parallax-window .hero-container {
 	position: absolute;
@@ -352,6 +355,21 @@ main {
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.6);
+	z-index: 2;
+}
+.blur-preview {
+	filter: blur(11px);
+	opacity: 1;
+	z-index: 1;
+	transition: opacity 1s ease;
+}
+.blur-preview img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-height: 100%;
+	min-width: 100%;
 }
 .parallax-window .hero-container {
 	background: transparent;
@@ -374,33 +392,10 @@ main {
 .parallax-window .banner-text:hover {
 
 }
-/*.parallax-window .banner-text:hover span {
-
-}*/
 .parallax-window .banner-text span {
 	position: relative;
 	color: #fff !important;
 	transition: color 0.5s ease;
-}
-
-/*
-	Hides the following strings on hover:
-
-	"Legal results through" + "," + "and" + ."
-*/
-/*.parallax-window .banner-text:hover span:nth-child(1),
-.parallax-window .banner-text:hover span:nth-child(3),
-.parallax-window .banner-text:hover span:nth-child(5),
-.parallax-window .banner-text:hover span:nth-child(7){
-	color: rgba(255, 255, 255, 0.1) !important;
-}*/
-@keyframes showColor {
-	0% {
-		color: rgba(255, 255, 255, 0);
-	}
-	100% {
-		color: rgba(255, 255, 255, 1);
-	}
 }
 .parallax__container {
 	clip: rect(0,auto,auto,0);
@@ -423,11 +418,15 @@ main {
 	transform-style: preserve-3d;
 	transform: translateZ(0px) !important;
 	width: 100%;
-	opacity: 0;
-	transition: opacity 0.5s ease;
+	transition: transform 1s ease;
 }
-.parallax.loaded {
-	opacity: 1;
+
+/*Loaded styles - hide the blur preview*/
+
+.parallax-window.loaded .blur-preview {
+	opacity: 0;
+}
+.parallax-window.loaded .parallax {
 }
 /*----------------ABOUT SECTION----------------*/
 
@@ -842,6 +841,7 @@ section.our-team {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	margin-top: 30px;
 }
 .our-team .people .person {
 	width: 32%;

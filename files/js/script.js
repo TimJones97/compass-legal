@@ -150,7 +150,7 @@ function setActiveNavItem(){
 	});
 }
 function fadeInParallax(){
-    $('.parallax').addClass('loaded');
+    $('.parallax-window').addClass('loaded');
 }
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
