@@ -192,7 +192,7 @@ section {
 	background: #fdfdfd;
 	font-size: inherit;
     font-weight: inherit;
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .navbar.opaque .nav-link {
 	color: #000;
@@ -207,7 +207,7 @@ section {
 	background: #d7212e;
 }
 .navbar.opaque .nav-item .solid-btn:hover {
-	border: 1px solid #d7212e;
+	border: 1px solid #911019;
 	background: #911019;
 }
 .navbar.opaque .navbar-brand p,
@@ -568,7 +568,7 @@ section.services {
 }
 .services .container-wrap .service-boxes .service:hover {
 	transform: scale3d(1.03, 1.03, 1) translateZ(0) perspective(999px);
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 .services .container-wrap .service-boxes .service:hover img {
 	margin-left: 10px;
@@ -756,7 +756,7 @@ section.services {
 /*HOVER EFFECTS*/
 .contact-details:hover,
 #map:hover {
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 
 /*----------------FOOTER SECTION----------------*/
@@ -856,7 +856,7 @@ section.our-team {
 	width: 100%;
 	margin-bottom: 15px;
 	background: #fff;
-	border-radius: 6px;
+	border-radius: .25em;
 	/*height: 180px;*/
 	display: flex;
 	flex-direction: column;
@@ -899,7 +899,7 @@ section.our-team {
 .our-team .people .person .profile-text {
 	height: 0px;
 	opacity: 0;
-	margin-top: 15px;
+	padding-top: 15px;
 	transition: height 0.5s ease, opacity 0.2s ease;
 	overflow: hidden;
 }
@@ -916,7 +916,7 @@ section.our-team {
 /*Hover effects*/
 .our-team .people .person:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
     z-index: 2;
 }
 .our-team .people .person:hover .profile-text {
@@ -944,7 +944,7 @@ section.client-centre {
 	margin-right: 1%;
 	margin-bottom: 15px;
 	background: #fff;
-	border-radius: 6px;
+	border-radius: .25em;
 	height: 180px;
 	display: flex;
 	flex-direction: column;
@@ -968,7 +968,7 @@ section.client-centre {
 /*Hover effects*/
 .client-centre .client-links .page:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
-    .thesisbox-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    .thesisbox-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 
 /*----------------CONTACT PAGE----------------*/
@@ -993,7 +993,7 @@ section.client-centre {
 }
 .contact-form .contact-form__element input,
 .contact-form .contact-form__element textarea {
-	border-radius: 6px;
+	border-radius: .25em;
 	border: unset;
 	width: 100%;
 	padding: 5px 10px;
@@ -1020,7 +1020,7 @@ section.client-centre {
 .contact-form .contact-cards .contact-item {
 	margin-bottom: 15px;
 	background: rgba(0, 0, 0, 0.2);
-	border-radius: 6px;
+	border-radius: .25em;
 	height: 100px;
 	display: flex;
 	flex-direction: column;
@@ -1108,7 +1108,7 @@ section.client-centre {
 .services-page .services .service {
 	position: relative;
 	background: #fff;
-	border-radius: 6px;
+	border-radius: .25em;
 	overflow: hidden;
 	margin-bottom: 30px;
 	transform: translateZ(0) perspective(999px);
@@ -1174,12 +1174,12 @@ section.client-centre {
 
 /*Highlight when coming from home page*/
 .services-page .services .service.highlight {
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 /*Hover effects*/
 .services-page .services .service:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
-    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 10%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
 /*.services-page .services .service:hover .service-image {
 	width: 35%;
@@ -1411,7 +1411,7 @@ section.client-centre {
 	#map {
 		height: 400px;
 		width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	.contact-details {
 		width: 100%;
@@ -1474,25 +1474,6 @@ section.client-centre {
 	.parallax-window .banner-text.animate span:nth-child(3) {
 		display: inline-block;
 	}
-	/*
-		"Legal results through"
-	*/
-	.parallax-window .banner-text span:nth-child(1) {
-		display: block;
-	}
-	/*
-		"and"
-	*/
-	.parallax-window .banner-text span:nth-child(5) {
-		display: inline-block;
-	}
-	/*
-		"open communication" + "."
-	*/
-	.parallax-window .banner-text span:nth-child(6),
-	.parallax-window .banner-text span:nth-child(7) {
-		display: unset;
-	}
 	.hero.hero-sml, .hero.hero-sml .parallax-window {
 		height: 20vh;
 		min-height: 300px;
@@ -1505,6 +1486,10 @@ section.client-centre {
 	.services .container-wrap .service-boxes .service {
 	    width: 100%;
 	    margin-bottom: 15px;
+   	}
+   	/*CONTACT SECTION*/
+   	#map {
+   		height: 250px;
    	}
 
 	/*OUR TEAM PAGE*/
