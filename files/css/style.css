@@ -78,7 +78,7 @@ section {
 .navbar * {
 	transition: all 0.5s ease;
 }
-.navbar .container-wrap {
+.navbar .container {
 	display: flex;
 	max-width: 1800px;
 	width: 100%;
@@ -88,7 +88,7 @@ section {
     align-items: center;
 	padding: 40px 40px 40px 60px;
 }
-.container-wrap {
+.container {
 	max-width: 1080px;
 	width: 100%;
 	margin: 0 auto;
@@ -319,7 +319,7 @@ section {
 	padding-left: 30px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 .mobile-nav .contact-item a {
 	color: #6b6b6b;
@@ -472,7 +472,7 @@ section {
 	border: 2px solid transparent;
 	transform: translateZ(0) perspective(999px);
 	cursor: default;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 .objectives .objectives-container .objective ul {
 	padding-inline-start: 0px;
@@ -505,15 +505,15 @@ section {
 section.services {
 	background: #f5f5f5;
 }
-.services .container-wrap .service-boxes {
+.services .container .service-boxes {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.services .container-wrap .service-boxes .service {
+.services .container .service-boxes .service {
 	position: relative;
 	width: 32.33333%;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	transition: all 0.5s ease;
 	text-align: center;
 	border-radius: 10px;
@@ -526,7 +526,7 @@ section.services {
 	transform: translateZ(0) perspective(999px);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 5%);
 }
-.services .container-wrap .service-boxes .service:before {
+.services .container .service-boxes .service:before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -535,7 +535,7 @@ section.services {
 	width: 100%;
 	background: #acacac;
 }
-.services .container-wrap .service-boxes .service .image-container {
+.services .container .service-boxes .service .image-container {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -545,7 +545,7 @@ section.services {
 	border-bottom: 3px solid #acacac;
 	transition: all 0.4s ease;
 }
-.services .container-wrap .service-boxes .service p {
+.services .container .service-boxes .service p {
 	position: absolute;
 	bottom: 10px;
 	left: 20px;
@@ -555,7 +555,7 @@ section.services {
 	text-align: left;
 	width: 100%;
 }
-.services .container-wrap .service-boxes .service img {
+.services .container .service-boxes .service img {
 	position: absolute;
 	height: auto;
 	width: 100%;
@@ -566,15 +566,15 @@ section.services {
 	z-index: 0;
 	transition: all 0.4s ease;
 }
-.services .container-wrap .service-boxes .service:hover {
+.services .container .service-boxes .service:hover {
 	transform: scale3d(1.03, 1.03, 1) translateZ(0) perspective(999px);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
 }
-.services .container-wrap .service-boxes .service:hover img {
+.services .container .service-boxes .service:hover img {
 	margin-left: 10px;
 	transform: scale3d(1.05, 1.05, 1) perspective(999px) translateZ(0) translate(-50%, -50%);
 }
-.services .container-wrap .service-boxes .service:hover p {
+.services .container .service-boxes .service:hover p {
 	color: #d7212e;
 }
 /*View all link*/
@@ -597,6 +597,7 @@ section.services {
 	color: #d7212e;
 	transition: all 0.4s ease;
 	background: transparent;
+	cursor: pointer;
 }
 .transparent-btn:hover {
 	background: rgba(145, 16, 25, 0.1);
@@ -682,6 +683,7 @@ section.services {
 	color: #fff;
 	transition: all 0.4s ease;
 	background: #d7212e;
+	min-width: 130px;
 }
 .solid-btn:hover {
 	color: #fff !important;
@@ -695,6 +697,7 @@ section.services {
 #map {
     width: 49%;
     border-radius: 10px;
+    border: none;
     transition: box-shadow 0.5s ease;
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 5%);
 }
@@ -773,7 +776,7 @@ footer {
 footer * {
 	color: #9b9b9b;
 }
-footer .container-wrap {
+footer .container {
 	overflow: hidden;
 }
 footer .link-container {
@@ -854,7 +857,7 @@ section.our-team {
 }
 .our-team .people .person {
 	width: 100%;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	background: #fff;
 	border-radius: .25em;
 	/*height: 180px;*/
@@ -876,7 +879,6 @@ section.our-team {
 	margin: 0 auto;
 	overflow: hidden;
 	border-radius: 50%;
-	border: 3px solid #acacac;
 }
 .our-team .people .person picture img {
 	width: 100%;
@@ -890,6 +892,7 @@ section.our-team {
 .our-team .people .person p.name {
 	margin-top: 15px;
 	margin-bottom: 0px;
+	color: #3b3b3b;
 }
 .our-team .people .person p.role {
 	color: #9b9b9b;
@@ -918,12 +921,20 @@ section.our-team {
 .our-team .people .person:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+    margin: 20px 0px;
     z-index: 2;
+}
+/*Don't give first person margin on top*/
+.our-team .people .person:first-of-type:hover {
+	margin-top: 0px;
 }
 .our-team .people .person:hover .profile-text {
     opacity: 1;
     height: 320px;
 	transition: height 0.5s ease, opacity 0.5s ease 0.3s;
+}
+.our-team .people .person:hover .profile-text.medium {
+    height: 250px;
 }
 .our-team .people .person:hover .profile-text.small {
     height: 170px;
@@ -934,7 +945,18 @@ section.our-team {
 section.client-centre {
 	background: #f5f5f5;
 }
-
+/*Main page container to hide the 
+  links when page link clicked*/
+.client-centre .main-pages {
+	height: 0px;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.client-centre.show .main-pages {
+	opacity: 1;
+	height: 565px;
+}
 .client-centre .client-links {
 	display: flex;
 	justify-content: flex-start;
@@ -943,7 +965,7 @@ section.client-centre {
 .client-centre .client-links .page {
 	width: 49%;
 	margin-right: 1%;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	background: #fff;
 	border-radius: .25em;
 	height: 180px;
@@ -953,6 +975,7 @@ section.client-centre {
 	transform: translateZ(0) perspective(999px);
 	transition: all 0.5s ease;
 	cursor: pointer;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 5%);
 }
 .client-centre .client-links .page img {
 	width: 50px;
@@ -964,12 +987,201 @@ section.client-centre {
 	text-align: center;
 	margin-top: 15px;
 	margin-bottom: 0px;
-	color: #000;
+	color: #3b3b3b;
 }
 /*Hover effects*/
 .client-centre .client-links .page:hover {
 	transform: translateZ(0) perspective(999px) scale3d(1.02, 1.02, 1.0);
-    .thesisbox-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
+
+/*-----HIDDEN FORMS-----*/
+
+.hidden-forms {
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	pointer-events: all;
+}
+.hidden-forms.hide {
+	opacity: 0;
+	pointer-events: none;
+}
+.hidden-forms .container {
+	opacity: 1;
+	transition: all 0.5s ease, padding 0.5s;
+	overflow: hidden;
+}
+.hidden-forms .container.hide {
+	opacity: 0;
+	height: 0px !important;
+	padding-top: 0;
+	padding-bottom: 0;
+	transition: all 0.5s ease, padding 0s;
+}
+
+/*GO BACK BUTTON*/
+.hidden-forms .transparent-btn {
+	position: relative;
+	margin-bottom: 30px;
+	padding-left: 40px;
+	width: 130px;
+}
+.hidden-forms .transparent-btn:after {
+	content: "\01F862";
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 50%;
+	left: 8px;
+	transform: translate(0%, -50%) scale(-1);
+	color: #d7212e;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: left 0.2s ease;
+}
+/*HOVER EFFECT ON BUTTON ARROW*/
+.hidden-forms .transparent-btn:hover:after {
+	left: 5px;
+}
+
+/*-----TERMS OF ENGAGEMENT-----*/
+
+.hidden-forms .container.engagement-page {
+	height: 1460px;
+}
+.engagement-page ul {
+	padding-inline-start: 10px;
+	margin-bottom: 10px;
+	list-style-position: outside;
+	list-style-type: "\00BB";
+}
+.engagement-page ul li {
+	padding-left: 10px;
+}
+.engagement-page ul li::marker {
+	color: #911019;
+}
+
+/*-----CONVEYANCING EMAIL REQUEST FORM-----*/
+
+.hidden-forms .container.conveyancing-page {
+	height: 1090px;
+}
+.conveyancing-page .flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.conveyancing-page .left,
+.conveyancing-page .right {
+	flex-basis: 49%;
+}
+.conveyancing-page form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+/*Form titles*/
+.conveyancing-page form p {
+	flex-basis: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #3b3b3b;
+	padding-left: 5px;
+}
+.conveyancing-page input,
+.conveyancing-page textarea,
+.conveyancing-page select {
+	position: relative;
+	border-radius: .25em;
+	border: unset;
+	width: 100%;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	background: #fff;
+	color: #000;
+}
+.conveyancing-page input.required:before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	height: 5px;
+	width: 5px;
+	color: red;
+	font-size: 14px;
+}
+.conveyancing-page textarea {
+	height: 250px;
+}
+.conveyancing-page input.half,
+.conveyancing-page select.half {
+	flex-basis: 49%;
+}
+
+/*RIGHT CONTAINER - EMAIL LINK*/
+
+.right .conveyancing-contact {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	border-radius: 0.25em;
+	background: linear-gradient(90deg,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('../img/client-centre/link-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: 44px;
+	height: calc(100% - 130px); /*Height of button and height of first p element in form*/
+	width: 100%;
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 5%);
+    transition: box-shadow 0.5s ease;
+}
+.right .conveyancing-contact p,
+.right .conveyancing-contact .contact-item {
+	display: inline-grid;
+	width: auto;
+	color: #fff;
+}
+.right .conveyancing-contact .contact-item {
+	position: relative;
+	margin-top: 15px;
+}
+.right .conveyancing-contact i {
+	color: #d9232f;
+	position: absolute;
+	left: -25px;
+	top: 5px;
+}
+.right .conveyancing-contact p {
+	margin-bottom: 10px;
+}
+.right .conveyancing-contact p.details {
+	color: #acacac;
+}
+.right .conveyancing-contact:hover {
+    box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
+}
+
+/*-----PAYMENT FORM-----*/
+
+.hidden-forms .container.payment-page {
+	height: 300px;
+}
+.payment-page p a {
+	color: #3b3b3b;
+}
+
+/*-----WILL INSTRUCTIONS-----*/
+
+.will {
+	pointer-events: none;
 }
 
 /*----------------CONTACT PAGE----------------*/
@@ -998,7 +1210,7 @@ section.client-centre {
 	border: unset;
 	width: 100%;
 	padding: 5px 10px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	background: #3b3b3b;
 	color: #fff;
 }
@@ -1009,7 +1221,6 @@ section.client-centre {
 	display: block;
 	margin: 0 auto;
 	margin-top: 30px;
-	width: 130px;
 }
 
 /*Right side contact cards*/
@@ -1019,7 +1230,7 @@ section.client-centre {
 	width: 49%;
 }
 .contact-form .contact-cards .contact-item {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	background: rgba(0, 0, 0, 0.2);
 	border-radius: .25em;
 	height: 100px;
@@ -1208,7 +1419,7 @@ section.client-centre {
 	.navbar-expand-xl .navbar-collapse {
 		display: none !important;
 	}
-	.navbar .container-wrap {
+	.navbar .container {
 		padding: 0px 40px 0px 60px;
 	    justify-content: space-between;
 	}
@@ -1222,7 +1433,7 @@ section.client-centre {
 	.navbar {
 	    height: 80px;
 	}
-	.navbar .container-wrap {
+	.navbar .container {
 		padding: 0px 5px;
 	}
 	.mobile-nav .logo img,
@@ -1271,7 +1482,7 @@ section.client-centre {
 	}
 
 	/*SERVICES*/
-	.services .container-wrap .service-boxes .service {
+	.services .container .service-boxes .service {
 		width: 49%;
 	}
 
@@ -1308,7 +1519,7 @@ section.client-centre {
 	}
 	.contact-location a.maps-link__anchor {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 		display: block;
 	}
 	.contact-location #map {
@@ -1334,7 +1545,7 @@ section.client-centre {
 }
 @media only screen and (max-width: 767px){
 	/*GENERAL STYLES*/
-	.container-wrap {
+	.container {
 		padding: 40px 20px;
 	}
 	.heading-container h1 {
@@ -1363,7 +1574,7 @@ section.client-centre {
 	}
 
 	/*SERVICES*/
-	.services .container-wrap .service-boxes .service {
+	.services .container .service-boxes .service {
 		border: 1px solid #f5f5f5;
 	}
 
@@ -1373,7 +1584,7 @@ section.client-centre {
 	}
 	.steps .step {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 	}
 	/*CONTACT SECTION*/
 	.contact .contact-container {
@@ -1382,7 +1593,7 @@ section.client-centre {
 	#map {
 		height: 400px;
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 	}
 	.contact-details {
 		width: 100%;
@@ -1396,7 +1607,7 @@ section.client-centre {
 
 	/*SERVICES PAGE*/
 	.services-page .services .service {
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 		min-height: 100%;
 		border: 1px solid #f5f5f5;
 	}
@@ -1429,7 +1640,7 @@ section.client-centre {
 	}
 	footer .tagline {
 	    margin-top: 5px;
-	    margin-bottom: 15px;
+	    margin-bottom: 10px;
 	}
 	footer .copy-text {
 		margin-top: 15px;
@@ -1459,9 +1670,9 @@ section.client-centre {
 		padding: 20px;
 	}
 	/*SERVICES SECTION*/
-	.services .container-wrap .service-boxes .service {
+	.services .container .service-boxes .service {
 	    width: 100%;
-	    margin-bottom: 15px;
+	    margin-bottom: 10px;
    	}
    	/*CONTACT SECTION*/
    	#map {

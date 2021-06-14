@@ -1,4 +1,6 @@
-function smallNavOnScroll(index=false){
+var isHomepage = false;
+
+function smallNavOnScroll(){
 	var offset = 5;
 	//Check on the navbar on start
 	var scrollTop = $(document).scrollTop();
@@ -47,14 +49,14 @@ function setCopyrightYear(){
 	var theDate = new Date(); 
 	$(".year").text(theDate.getFullYear());
 }
-function isHomepage(){
+function checkHomepage(){
 	var page = document.title;
 	// If page title matches homepage title, return true
 	if(page == 'Brisbane & Gold Coast Lawyers | Compass Legal Solutions'){
-		return true;
+		isHomepage = true;
 	}
 	else {
-		return false;
+		isHomepage = false;
 	}
 }
 function getUrlParameter(sParam){
@@ -149,8 +151,96 @@ function setActiveNavItem(){
 		}
 	});
 }
+function createScrollRevealEffects(){
+	var slideUp = {
+		duration: 700,
+		origin: 'bottom',
+		distance: '100px',
+		scale: '0.5',
+	},
+	slideUpNoZoom = {
+		duration: 700,
+		origin: 'bottom',
+		distance: '100px'
+	},
+	slideInLeft = {
+		duration: 700,
+		distance: '100px',
+		origin: 'left'
+	}
+	slideInRight = {
+		duration: 700,
+		distance: '100px',
+		origin: 'right'
+	}
+
+
+	// Add the animation to the elements
+	ScrollReveal().reveal('.objectives-container .objective.one', slideInLeft);
+	ScrollReveal().reveal('.objectives-container .objective.two', slideInRight);
+
+	// Services
+	ScrollReveal().reveal('.service-boxes .service', slideUpNoZoom);
+
+	// Process steps
+	ScrollReveal().reveal('.steps .step', slideUp);
+
+	// For the two objectives
+	ScrollReveal().reveal($('.objective.one'),  { delay: 400, afterReveal: removeScrollRevealStyles });
+	ScrollReveal().reveal($('.objective.two'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+
+	// For the process steps
+	ScrollReveal().reveal($('.service-boxes .service.one'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.two'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.three'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.four'),  { delay: 600, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.five'),  { delay: 600, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.six'),  { delay: 600, afterReveal: removeScrollRevealStyles  });
+
+	// For the process steps
+	ScrollReveal().reveal($('.step.one'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.step.two'),  { delay: 700, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.step.three'),  { delay: 1000, afterReveal: removeScrollRevealStyles  });
+
+	// For the contact information
+	ScrollReveal().reveal($('.contact .contact-details'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.contact #map'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+
+}
+function removeScrollRevealStyles(el){
+	$(el).removeAttr('style');
+}
 function fadeInParallax(){
     $('.parallax-window').addClass('loaded');
+}
+function toggleClientCentrePages(){
+	$('.page').click(function(){
+		// Toggle Client Centre element to show and hide on click
+    	$('.client-centre').removeClass('show');
+    	$('.hidden-forms').removeClass('hide');
+	});
+	$('.go-back').click(function(){
+		$('.client-centre').addClass('show');
+		$('.hidden-forms .container').addClass('hide');
+		// Wait 500ms until client-centre main page links has appeared again
+		setTimeout(function(){
+			$('.hidden-forms').addClass('hide');
+		}, 500);
+	});
+    
+    $('.payment').click(function(){
+    	$('.payment-page').toggleClass('hide');
+    });
+    $('.conveyancing').click(function(){
+    	$('.conveyancing-page').toggleClass('hide');
+    });
+    $('.will').click(function(){
+    	$('.will-page').toggleClass('hide');
+    });
+    $('.engagement').click(function(){
+		// Remove hide class from hidden forms/pages
+    	$('.engagement-page').toggleClass('hide');
+    });
 }
 $(window).resize(function(){
 	// Remove styles that may have been applied on mobile/desktop
@@ -161,15 +251,15 @@ $(window).resize(function(){
 	setTimeout(function(){
 		addBodyFooterMargin();
 	}, 200)
-	smallNavOnScroll(isHomepage());
+	smallNavOnScroll();
 });
 $(window).scroll(function(){
-	smallNavOnScroll(isHomepage());
+	smallNavOnScroll();
 });
 $(window).on('load', function(){
 	fadeInParallax();
     // Wait for page to load before enabling transitions 
-    // to stop elements from showing too early
+    // to stop elements from showing animating early
 	$("body").removeClass("no-anim");
 });
 $(document).ready(function(){
@@ -177,11 +267,16 @@ $(document).ready(function(){
 	  speed: 1.8
 	});
 	bindVelocity();
-	smallNavOnScroll(isHomepage());
+	smallNavOnScroll();
 	toggleMobileNav();
 	setActiveNavItem();
 	setCopyrightYear();
 	addBodyFooterMargin();
+	toggleClientCentrePages();
+	// Only add scroll reveal effects on homepage
+	if(isHomepage){
+		createScrollRevealEffects();
+	}
 	setTimeout(function(){
 		addBodyFooterMargin();
 	}, 200)
