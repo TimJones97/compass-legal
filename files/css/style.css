@@ -1492,6 +1492,13 @@ section.client-centre {
 		padding: 20px;
 	}
 
+	/*OUR TEAM PAGE*/
+	.our-team .people .person:hover .profile-text.small {
+	    height: 230px;
+	}
+	.our-team .people .person:hover .profile-text.medium {
+	    height: 320px;
+	}
 	/*CONTACT PAGE*/
 
 	/*Contact details*/
