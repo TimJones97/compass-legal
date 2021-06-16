@@ -218,10 +218,24 @@ function toggleClientCentrePages(){
 		// Toggle Client Centre element to show and hide on click
     	$('.client-centre').removeClass('show');
     	$('.hidden-forms').removeClass('hide');
+    	// Scroll to the top of the div if on mobile to
+    	// prevent hidden text
+    	if(isMobile()){
+    		$('.main-pages').velocity("scroll", { 
+    		  duration: 500,
+    		  offset: -79
+    		});
+    	}
+    	// Enable button after animation has finished
+    	setTimeout(function(){
+    		$('.go-back').removeClass('disable');
+    	}, 500);
 	});
 	$('.go-back').click(function(){
 		$('.client-centre').addClass('show');
 		$('.hidden-forms .container').addClass('hide');
+		// Disable the buttons again
+		$('.go-back').addClass('disable');
 		// Wait 500ms until client-centre main page links has appeared again
 		setTimeout(function(){
 			$('.hidden-forms').addClass('hide');
@@ -233,6 +247,7 @@ function toggleClientCentrePages(){
     });
     $('.conveyancing').click(function(){
     	$('.conveyancing-page').toggleClass('hide');
+
     });
     $('.will').click(function(){
     	$('.will-page').toggleClass('hide');

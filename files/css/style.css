@@ -319,7 +319,7 @@ section {
 	padding-left: 30px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 .mobile-nav .contact-item a {
 	color: #6b6b6b;
@@ -1045,6 +1045,11 @@ section.client-centre {
 	align-items: center;
 	justify-content: center;
 	transition: left 0.2s ease;
+	pointer-events: all;
+}
+
+.hidden-forms .transparent-btn.disable {
+	pointer-events: none;
 }
 /*HOVER EFFECT ON BUTTON ARROW*/
 .hidden-forms .transparent-btn:hover:after {
@@ -1177,12 +1182,20 @@ section.client-centre {
 }
 .payment-page p a {
 	color: #3b3b3b;
+	text-decoration: underline;
 }
 
 /*-----WILL INSTRUCTIONS-----*/
 
-.will {
-	pointer-events: none;
+.hidden-forms .container.will-page {
+	height: 300px;
+}
+.will-page p a {
+	color: #3b3b3b;
+	text-decoration: underline;
+}
+.hidden-forms .container.will-page {
+
 }
 
 /*----------------CONTACT PAGE----------------*/
@@ -1550,6 +1563,24 @@ section.client-centre {
 	.our-team .people .person:hover .profile-text {
 		height: 380px;
 	}
+
+	/*CLIENT CENTRE*/
+	.conveyancing-page .flex-container {
+		display: block;
+	}
+	.conveyancing-page .left, 
+	.conveyancing-page .right {
+		flex-basis: 100%;	
+	}
+	.conveyancing-page .right .conveyancing-contact{
+		height: 300px;
+	}
+	.hidden-forms .container.conveyancing-page {
+		height: 1430px;
+	}
+	.hidden-forms .container.engagement-page {
+		height: 1800px;
+	}
 }
 @media only screen and (max-width: 767px){
 	/*GENERAL STYLES*/
@@ -1642,6 +1673,21 @@ section.client-centre {
 		margin-bottom: 10px;
 	}
 
+	/*CLIENT CENTRE*/
+	.client-centre .client-links .page {
+		width: 100%;
+		margin-right: 0;
+	}
+	.client-centre.show .main-pages {
+		height: 940px;
+	}
+	.hidden-forms .container.payment-page {
+		height: 350px;
+	}
+	.hidden-forms .container.will-page {
+		height: 350px;
+	}
+
 	/*FOOTER*/
 	footer {
 		padding: 20px 0px 0px;
@@ -1698,6 +1744,9 @@ section.client-centre {
 	.client-centre .client-links .page {
 		width: 100%;
 		margin-right: unset;
+	}
+	.hidden-forms .container.conveyancing-page {
+		height: 1450px;
 	}
 
 	/*CONTACT PAGE*/
