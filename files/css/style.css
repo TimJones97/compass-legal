@@ -86,7 +86,7 @@ section {
 	flex-flow: row nowrap;
 	justify-content: space-between;
     align-items: center;
-	padding: 40px;
+	padding: 40px 40px 10px;
 }
 .container {
 	max-width: 1080px;
@@ -1446,7 +1446,7 @@ section.client-centre {
 		display: none !important;
 	}
 	.navbar .container {
-		padding: 0px 40px 0px 40px;
+		padding: 0px 40px 10px 40px;
 	    justify-content: space-between;
 	}
 	.parallax-window .banner-text {
