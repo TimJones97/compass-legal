@@ -1454,10 +1454,10 @@ section.client-centre {
 @media only screen and (max-width: 991px){
 	/*NAV*/
 	.navbar {
-	    height: 80px;
+	    height: 100px;
 	}
 	.navbar .container {
-		padding: 0px 5px;
+		padding: 0px 5px 10px;
 	}
 	.mobile-nav .logo img,
 	.navbar-brand img,
@@ -1465,6 +1465,11 @@ section.client-centre {
 		width: 300px;
 		height: auto;
 	}
+	.navbar .navbar-brand p {
+		bottom: -25px;
+	    left: 30px;
+	}
+
 	/*MOBILE NAV*/
 	.mobile-nav .logo {
 	    top: 20px;
@@ -1475,6 +1480,7 @@ section.client-centre {
 	    width: 17px;
 	    height: 17px;
 	}
+
 	/*HERO STYLES*/
 	.parallax-window .banner-text {
 	    text-align: left;
@@ -1713,6 +1719,15 @@ section.client-centre {
 	}
 }
 @media only screen and (max-width: 479px){
+	/*NAV*/
+	.mobile-nav .logo img, 
+	.navbar-brand img, .navbar-brand {
+		width: 275px;
+	}
+	.navbar .navbar-brand p {
+	    left: 25px;
+	    font-size: 12px;
+	}
 	/*GENERAL*/
 	.heading-container h1 {
 		font-size: 35px;

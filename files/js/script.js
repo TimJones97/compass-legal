@@ -223,7 +223,7 @@ function toggleClientCentrePages(){
     	if(isMobile()){
     		$('.main-pages').velocity("scroll", { 
     		  duration: 500,
-    		  offset: -79
+    		  offset: -99
     		});
     	}
     	// Enable button after animation has finished
