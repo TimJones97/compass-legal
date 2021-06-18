@@ -106,7 +106,8 @@ section {
 	position: absolute;
 	top: 50%;
 	left: 0;
-	transform: translate(0%, -50%);
+	backface-visibility: hidden;
+	transform: translateZ(0) translate(0%, -50%);
 }
 .navbar .navbar-brand p {
 	position: absolute;
