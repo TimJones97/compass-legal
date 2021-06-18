@@ -289,29 +289,27 @@ section {
 	text-decoration: none;
 }
 .mobile-nav .logo img {
-	width: 250px;
+	width: 350px;
 	height: auto;
 	display: inline-block;
 	margin-right: 10px;
 	transition: all 0.5s ease;
 }
-.mobile-nav .logo p,
-.mobile-nav .logo p span {
-	display: inline-block;
-	color: #000;
-	font-size: 25px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	margin: 0;
-}
-.mobile-nav .logo p span {
-	font-weight: 500;
+.mobile-nav .logo p {
+	position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    bottom: -29px;
+    left: 34px;
+    font-size: 14px;
+    color: #6b6b6b;
 }
 .mobile-nav .vertical-align {
 	position: absolute;
 	top: 50%;
 	width: 100%;
 	transform: translate(0%, -50%);
+	padding-left: 30px;
 }
 .mobile-nav .nav {
     display: flex;
@@ -873,7 +871,7 @@ section.our-team {
 	width: 100%;
 	margin-bottom: 10px;
 	background: #fff;
-	border-radius: .25em;
+	border-radius: 7px;
 	/*height: 180px;*/
 	display: flex;
 	flex-direction: column;
@@ -982,7 +980,7 @@ section.client-centre {
 	margin-right: 1%;
 	margin-bottom: 10px;
 	background: #fff;
-	border-radius: .25em;
+	border-radius: 7px;
 	height: 180px;
 	display: flex;
 	flex-direction: column;
@@ -1119,7 +1117,7 @@ section.client-centre {
 .conveyancing-page textarea,
 .conveyancing-page select {
 	position: relative;
-	border-radius: .25em;
+	border-radius: 7px;
 	border: unset;
 	width: 100%;
 	padding: 5px 10px;
@@ -1234,7 +1232,7 @@ section.client-centre {
 }
 .contact-form .contact-form__element input,
 .contact-form .contact-form__element textarea {
-	border-radius: .25em;
+	border-radius: 7px;
 	border: unset;
 	width: 100%;
 	padding: 5px 10px;
@@ -1260,7 +1258,7 @@ section.client-centre {
 .contact-form .contact-cards .contact-item {
 	margin-bottom: 10px;
 	background: rgba(0, 0, 0, 0.2);
-	border-radius: .25em;
+	border-radius: 7px;
 	height: 100px;
 	display: flex;
 	flex-direction: column;
@@ -1348,7 +1346,7 @@ section.client-centre {
 .services-page .services .service {
 	position: relative;
 	background: #fff;
-	border-radius: .25em;
+	border-radius: 7px;
 	overflow: hidden;
 	margin-bottom: 30px;
 	transform: translateZ(0) perspective(999px);
@@ -1467,17 +1465,19 @@ section.client-centre {
 	.mobile-nav .logo img,
 	.navbar-brand img,
 	.navbar-brand {
-		width: 300px;
 		height: auto;
 	}
 	.navbar .navbar-brand p {
 		bottom: -30px;
-	    left: 28px;
+	    left: 38px;
 	}
 
 	/*MOBILE NAV*/
 	.mobile-nav .logo {
-	    top: 20px;
+	    top: 25px;
+	}
+	.mobile-nav .logo p {
+	    left: 33px;
 	}
 	.mobile-nav .close-btn {
 	    top: 30px;
@@ -1609,11 +1609,7 @@ section.client-centre {
 	.heading-container h1 {
 		font-size: 45px;
 	}
-	/*NAV*/
-	.mobile-nav .logo p, .mobile-nav .logo p span,
-	.navbar-brand p, .navbar-brand p span {
-		font-size: 20px;
-	}
+
 	/*MOBILE NAV*/
 	.mobile-nav {
 		width: 100%;
@@ -1737,6 +1733,18 @@ section.client-centre {
 	    left: 27px;
 	    bottom: -25px;
 	    font-size: 12px;
+	}
+	/*MOBILE NAV*/
+	.mobile-nav .logo {
+	    left: 20px;
+	}
+	.mobile-nav .logo p {
+	    left: 26px;
+	    bottom: -32px;
+	    font-size: 12px;
+	}
+	.mobile-nav .vertical-align {
+	    padding-left: 10px;
 	}
 	/*GENERAL*/
 	.heading-container h1 {
