@@ -86,7 +86,7 @@ section {
 	flex-flow: row nowrap;
 	justify-content: space-between;
     align-items: center;
-	padding: 40px 40px 10px;
+	padding: 0px 40px 10px;
 }
 .container {
 	max-width: 1080px;
