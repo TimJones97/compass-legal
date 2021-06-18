@@ -1750,8 +1750,8 @@ section.client-centre {
 		display: inline-block;
 	}
 	.hero.hero-sml, .hero.hero-sml .parallax-window {
-		height: 20vh;
-		min-height: 300px;
+		height: 350px;
+		min-height: unset;
 	}
 	/*OBJECTIVES SECTION*/
 	.objectives .objectives-container .objective {
