@@ -101,7 +101,7 @@ section {
 	height: 50px;
 }
 .navbar-brand img {
-	width: 350px;
+	width: 400px;
 	height: auto;
 	position: absolute;
 	top: 50%;
@@ -113,7 +113,7 @@ section {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	bottom: -10px;
-	left: 34px;
+	left: 39px;
 	font-size: 14px;
 	color: #fff !important;
 	transition: color 0.5s ease;
@@ -805,7 +805,7 @@ footer p {
 	clear: both;
 }
 footer .logo {
-	width: 350px;
+	width: 400px;
 }
 footer .tagline {
 	margin-top: 10px;
@@ -1470,7 +1470,7 @@ section.client-centre {
 		height: auto;
 	}
 	.navbar .navbar-brand p {
-		bottom: -25px;
+		bottom: -30px;
 	    left: 28px;
 	}
 
@@ -1730,6 +1730,7 @@ section.client-centre {
 	}
 	.navbar .navbar-brand p {
 	    left: 27px;
+	    bottom: -25px;
 	    font-size: 12px;
 	}
 	/*GENERAL*/
