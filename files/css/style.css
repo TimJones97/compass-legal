@@ -116,7 +116,7 @@ section {
 	left: 34px;
 	font-size: 14px;
 	color: #fff !important;
-	transition: inherit;
+	transition: color 0.5s ease;
 }
 .navbar-brand img.logo-black {
 	opacity: 0;
