@@ -136,6 +136,9 @@ section {
 .navbar-brand p span {
 	font-weight: 500;
 }
+.navbar .nav {
+	padding-top: 10px;
+}
 .navbar-expand-md .navbar-collapse {
 	justify-content: flex-end;
 }
@@ -265,6 +268,7 @@ section {
 	opacity: 0;
 	pointer-events: none;
 	transition: all 0.5s ease;
+	z-index: 1;
 }
 .mobile-nav .close-btn:hover {
 	opacity: 0 !important;
@@ -361,6 +365,8 @@ main {
     position: relative;
     z-index: 2;
     overflow: hidden;
+    transition: height 0.5s ease;
+    backface-visibility: hidden;
 }
 .blur-preview,
 .parallax-overlay,
@@ -1044,13 +1050,14 @@ section.client-centre {
 	width: 130px;
 }
 .hidden-forms .transparent-btn:after {
-	content: "\01F862";
-	width: 35px;
-	height: 35px;
+	content: url(../img/general/arrow-left.svg);
+	width: 20px;
+	height: 18px;
 	position: absolute;
 	top: 50%;
-	left: 8px;
-	transform: translate(0%, -50%) scale(-1);
+	left: 2px;
+	transform: translate(0%, -50%);
+	margin-top: 1px;
 	color: #d7212e;
 	font-size: 20px;
 	display: flex;
@@ -1065,7 +1072,7 @@ section.client-centre {
 }
 /*HOVER EFFECT ON BUTTON ARROW*/
 .hidden-forms .transparent-btn:hover:after {
-	left: 5px;
+	left: -2px;
 }
 
 /*-----TERMS OF ENGAGEMENT-----*/
@@ -1151,7 +1158,7 @@ section.client-centre {
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-	border-radius: 0.25em;
+	border-radius: 6px;
 	background: linear-gradient(90deg,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('../img/client-centre/link-bg.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1504,8 +1511,7 @@ section.client-centre {
 		color: #fff !important;
 	}
 	.hero.hero-sml, .hero.hero-sml .parallax-window {
-		height: 30vh;
-		min-height: 400px;
+		height: 400px;
 	}
 	.parallax-window .hero-container {
 	    margin-top: 20px;
@@ -1616,12 +1622,26 @@ section.client-centre {
 		right: calc(-100% - 5px);
 	}
 	.mobile-nav .vertical-align {
-	    padding-bottom: 50px;
+		display: flex;
+		flex-wrap: wrap;
+	    padding: 120px 0px 50px 30px;
+	    position: relative;
+	    transform: unset;
+	    top: unset;
+	    left: unset;
+	}
+	.mobile-nav .nav,
+	.mobile-nav .contact-items {
+		flex-basis: 50%;
+	}
+	.mobile-nav .contact-item {
+		height: 55px;
 	}
 	/*HERO STYLES*/
 	.parallax-window .banner-text {
 	    text-align: left;
 	    width: calc(100% - 40px);
+	    font-size: 40px;
 	}
 	.parallax-window .hero-container .solid-btn {
 		margin-left: 20px;
@@ -1712,6 +1732,9 @@ section.client-centre {
 	footer {
 		padding: 20px 0px 0px;
 	}
+	footer .container {
+	    padding: 40px 20px 15px;
+	}
 	footer .tagline {
 	    margin-top: 5px;
 	    margin-bottom: 10px;
@@ -1743,8 +1766,17 @@ section.client-centre {
 	    bottom: -32px;
 	    font-size: 12px;
 	}
+	.mobile-nav .close-btn {
+	    top: 33px;
+	}
 	.mobile-nav .vertical-align {
+		display: block;
 	    padding-left: 10px;
+	    position: absolute;
+	    top: 50%;
+	    width: 100%;
+	    transform: translate(0%, -50%);
+	    padding: 0px 0px 0px 10px;
 	}
 	/*GENERAL*/
 	.heading-container h1 {
@@ -1799,6 +1831,9 @@ section.client-centre {
 	/*FOOTER*/
 	footer {
 		padding: 20px 0px 20px;
+	}
+	footer .container {
+	    padding: 40px 20px;
 	}
 	footer .tagline {
 	    margin-top: 5px;
