@@ -98,11 +98,15 @@ section {
 }
 .navbar-brand {
 	position: relative;
-	width: 250px;
 	height: 50px;
 }
-.navbar-brand img {
+.mobile-nav .logo img,
+.navbar-brand img,
+footer .logo,
+.navbar-brand {
 	width: 400px;
+}
+.navbar-brand img {
 	height: auto;
 	position: absolute;
 	top: 50%;
@@ -170,6 +174,7 @@ section {
 	display: none;
 	align-items: center;
     height: 100%;
+    margin-top: 5px;
 }
 .nav-button {
 	display: inline-block;
@@ -928,6 +933,7 @@ section.our-team {
 	padding-top: 15px;
 	transition: height 0.5s ease, opacity 0.2s ease;
 	overflow: hidden;
+	backface-visibility: hidden;
 }
 .our-team .people .person p.description {
 	text-align: left;
@@ -1665,7 +1671,7 @@ section.client-centre {
 	.mobile-nav .contact-item {
 		height: 55px;
 	}
-	
+
 	/*HERO STYLES*/
 	.parallax-window .banner-text {
 	    text-align: left;
@@ -1774,8 +1780,10 @@ section.client-centre {
 }
 @media only screen and (max-width: 479px){
 	/*NAV*/
-	.mobile-nav .logo img, 
-	.navbar-brand img, .navbar-brand {
+	.mobile-nav .logo img,
+	.navbar-brand img,
+	footer .logo,
+	.navbar-brand {
 		width: 275px;
 	}
 	.navbar .navbar-brand p {

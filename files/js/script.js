@@ -157,21 +157,33 @@ function createScrollRevealEffects(){
 		origin: 'bottom',
 		distance: '100px',
 		scale: '0.5',
+		viewOffset: {
+	        top: 150
+	    }
 	},
 	slideUpNoZoom = {
 		duration: 700,
 		origin: 'bottom',
-		distance: '100px'
+		distance: '100px',
+		viewOffset: {
+	        top: 150
+	    }
 	},
 	slideInLeft = {
 		duration: 700,
 		distance: '100px',
-		origin: 'left'
+		origin: 'left',
+		viewOffset: {
+	        top: 150
+	    }
 	}
 	slideInRight = {
 		duration: 700,
 		distance: '100px',
-		origin: 'right'
+		origin: 'right',
+		viewOffset: {
+	        top: 150
+	    }
 	}
 
 
@@ -273,9 +285,6 @@ $(window).scroll(function(){
 });
 $(window).on('load', function(){
 	fadeInParallax();
-    // Wait for page to load before enabling transitions 
-    // to stop elements from showing animating early
-	$("body").removeClass("no-anim");
 });
 $(document).ready(function(){
 	new universalParallax().init({
@@ -288,11 +297,15 @@ $(document).ready(function(){
 	setCopyrightYear();
 	addBodyFooterMargin();
 	toggleClientCentrePages();
+	checkHomepage();
 	// Only add scroll reveal effects on homepage
 	if(isHomepage){
 		createScrollRevealEffects();
 	}
-	setTimeout(function(){
-		addBodyFooterMargin();
-	}, 200)
 });
+setTimeout(function(){
+	addBodyFooterMargin();
+    // Wait for page to load before enabling transitions 
+    // to stop elements from showing animating early
+	$("body").removeClass("no-anim");
+}, 100)
