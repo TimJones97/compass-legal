@@ -141,7 +141,7 @@ function setActiveNavItem(){
 	$('nav .nav-item').each(function(){
 		// Get the anchor element in each nav item and split the href
 		// attribute by / and - to get the page name
-		pageHref = $(this).children().first().attr('href').split('/')[2]; // Affected by /compass-legal URL, change to 1 after publishing
+		pageHref = $(this).children().first().attr('href').split('/')[1];
 		if(pageHref != null){
 			// Get the first word of page name
 			pageHref = pageHref.split('-')[0];
