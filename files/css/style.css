@@ -804,13 +804,17 @@ footer * {
 }
 footer .container {
 	overflow: hidden;
+	max-width: 1800px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 }
-footer .link-container {
-	overflow: hidden;
+footer .container .left, 
+footer .container .right {
+	flex-basis: 50%;
 }
-footer .footer-links {
-	float: left;
-	margin-right: 30px;
+footer .container .right p {
+	margin: 10px 0px;
 }
 footer p {
 	font-size: 16px;
@@ -824,12 +828,28 @@ footer .tagline {
 	margin-top: 10px;
 	margin-bottom: 30px;
 }
-footer .footer-links a {
-	display: block;
-	transition: all 0.5s ease;
-	margin-bottom: 5px;
+footer .link-container {
+	overflow: hidden;
+	display: flex;
+	margin-bottom: 15px;
 }
-footer .footer-links a:hover {
+footer .link-container a {
+	display: block;
+	position: relative;
+	transition: all 0.5s ease;
+	margin: 0px 10px 5px 0px;
+}
+footer .link-container a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	height: 2px;
+	width: 100%;
+	border-bottom: 1px dotted #acacac;
+	opacity: 0.5;
+}
+footer .link-container a:hover {
 	color: #e7e7e7;
 	text-decoration: none;
 }

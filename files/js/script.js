@@ -323,4 +323,4 @@ setTimeout(function(){
     // Wait for page to load before enabling transitions 
     // to stop elements from showing animating early
 	$("body").removeClass("no-anim");
-}, 100)
+}, 10)
