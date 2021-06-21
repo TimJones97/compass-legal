@@ -184,6 +184,13 @@ function createScrollRevealEffects(){
 		viewOffset: {
 	        top: 150
 	    }
+	},
+	fadeIn = {
+		duration: 700,
+		distance: '0px',
+		viewOffset: {
+	        top: 250
+	    }
 	}
 
 
@@ -197,11 +204,17 @@ function createScrollRevealEffects(){
 	// Process steps
 	ScrollReveal().reveal('.steps .step', slideUp);
 
+	// Services page
+	ScrollReveal().reveal('.services-page .service', fadeIn);
+
+	// Our team page
+	ScrollReveal().reveal('.person', fadeIn);
+
 	// For the two objectives
 	ScrollReveal().reveal($('.objective.one'),  { delay: 400, afterReveal: removeScrollRevealStyles });
 	ScrollReveal().reveal($('.objective.two'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 
-	// For the process steps
+	// For the services
 	ScrollReveal().reveal($('.service-boxes .service.one'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 	ScrollReveal().reveal($('.service-boxes .service.two'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 	ScrollReveal().reveal($('.service-boxes .service.three'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
@@ -218,6 +231,11 @@ function createScrollRevealEffects(){
 	ScrollReveal().reveal($('.contact .contact-details'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 	ScrollReveal().reveal($('.contact #map'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 
+	// For the services page
+	ScrollReveal().reveal($('.services-page .service'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
+
+	// For the our team page
+	ScrollReveal().reveal($('.person'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 }
 function removeScrollRevealStyles(el){
 	$(el).removeAttr('style');
@@ -297,11 +315,8 @@ $(document).ready(function(){
 	setCopyrightYear();
 	addBodyFooterMargin();
 	toggleClientCentrePages();
-	checkHomepage();
 	// Only add scroll reveal effects on homepage
-	if(isHomepage){
-		createScrollRevealEffects();
-	}
+	createScrollRevealEffects();
 });
 setTimeout(function(){
 	addBodyFooterMargin();
