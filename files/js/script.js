@@ -248,6 +248,7 @@ function toggleClientCentrePages(){
 		// Toggle Client Centre element to show and hide on click
     	$('.client-centre').removeClass('show');
     	$('.hidden-forms').removeClass('hide');
+		$('.go-back').addClass('disable');
     	// Scroll to the top of the div if on mobile to
     	// prevent hidden text
     	if(isMobile()){
@@ -265,11 +266,12 @@ function toggleClientCentrePages(){
 		$('.client-centre').addClass('show');
 		$('.hidden-forms .container').addClass('hide');
 		// Disable the buttons again
-		$('.go-back').addClass('disable');
-		// Wait 500ms until client-centre main page links has appeared again
-		setTimeout(function(){
-			$('.hidden-forms').addClass('hide');
-		}, 500);
+		if($(this).hasClass('disable')){
+			// Wait 500ms until client-centre main page links has appeared again
+			setTimeout(function(){
+				$('.hidden-forms').addClass('hide');
+			}, 500);
+		}
 	});
     
     $('.payment').click(function(){

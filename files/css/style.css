@@ -808,6 +808,31 @@ footer .container {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-end;
+}
+footer .container .left p:first-of-type {
+	margin-top: 10px;
+}
+footer .container .left p {
+	padding-left: 3px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: flex-start;
+}
+footer .container .left p i {
+	color: #fff;
+	margin-right: 15px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .container .left p a {
+	display: inline-block;
+}
+footer .container .left p a:hover {
+	color: #e7e7e7;
 }
 footer .container .left, 
 footer .container .right {
@@ -824,20 +849,22 @@ footer p {
 footer .logo {
 	width: 400px;
 }
-footer .tagline {
-	margin-top: 10px;
-	margin-bottom: 30px;
-}
 footer .link-container {
 	overflow: hidden;
-	display: flex;
 	margin-bottom: 15px;
 }
+footer .link-container ul {
+	padding-inline-start:  0px;
+	list-style: none;
+}
+footer .link-container ul {
+	display: flex;
+	margin-bottom: 0;
+}
 footer .link-container a {
-	display: block;
 	position: relative;
 	transition: all 0.5s ease;
-	margin: 0px 10px 5px 0px;
+	margin: 0px 15px 5px 0px;
 }
 footer .link-container a:after {
 	content: "";
@@ -1638,6 +1665,22 @@ section.client-centre {
 		height: 250px;
 		margin-bottom: 30px;
 	}
+
+	/*FOOTER*/
+	footer .container {
+		padding: 40px 40px 20px;
+	}
+	footer .link-container p:first-of-type {
+		display: none;
+	}
+	footer .container .left,
+	footer .container .right {
+		flex-basis: auto;
+	}
+	footer .container .right {
+		padding-left: 3px;
+		margin-top: 20px;
+	}
 }
 @media only screen and (max-width: 767px){
 	/*GENERAL STYLES*/
@@ -1787,12 +1830,25 @@ section.client-centre {
 	footer {
 		padding: 20px 0px 0px;
 	}
+	footer .link-container {
+	    flex-wrap: wrap;
+	}
+	footer .link-container ul {
+		flex-wrap: wrap;
+	}
+	footer .link-container li {
+		flex-basis: 50%;
+		margin-right: 0;
+	}
 	footer .container {
 	    padding: 40px 20px 15px;
 	}
-	footer .tagline {
-	    margin-top: 5px;
-	    margin-bottom: 10px;
+	footer .container .left,
+	footer .container .right {
+		flex-basis: 50%;
+	}
+	footer .container .left {
+		padding-bottom: 25px;
 	}
 	footer .copy-text {
 		margin-top: 15px;
@@ -1876,11 +1932,13 @@ section.client-centre {
 		padding: 20px 0px 20px;
 	}
 	footer .container {
-	    padding: 40px 20px;
+	    padding: 40px 20px 0px;
 	}
-	footer .tagline {
-	    margin-top: 5px;
-	    margin-bottom: 30px;
+	footer .container .left, footer .container .right {
+    	flex-basis: 100%;
+	}
+	footer .link-container li {
+    	flex-basis: 135px;
 	}
 	footer .copy-text {
 		margin-top: 30px;
