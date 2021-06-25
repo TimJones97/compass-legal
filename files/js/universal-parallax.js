@@ -59,7 +59,7 @@ var positionParallax = function(e, t, a, i) {
             $(window).resize(function() { 
                 setTimeout(function(){
                     adjustOnLargeResize(t, a);
-                }, 300);
+                }, 400);
             }),
             window.addEventListener("scroll", function() {
                 animateParallax(t, a)

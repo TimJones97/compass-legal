@@ -102,7 +102,7 @@ section {
 }
 .mobile-nav .logo img,
 .navbar-brand img,
-footer .logo,
+footer img.logo,
 .navbar-brand {
 	width: 400px;
 }
@@ -549,6 +549,7 @@ section.services {
 	overflow: hidden;
 	cursor: pointer;
 	background: #fff;
+	backface-visibility: hidden;
 	transform: translateZ(0) perspective(999px);
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 5%);
 }
@@ -807,19 +808,30 @@ footer .container {
 	max-width: 1800px;
 	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-end;
+	justify-content: space-between;
+	align-items: flex-start;
 }
-footer .container .left p:first-of-type {
+footer .footer-container {
+	flex-basis: auto;
 	margin-top: 10px;
 }
-footer .container .left p {
+
+/*LOGO*/
+footer .footer-container.logo {
+	margin-top: 0px;
+}
+footer img.logo {
+	width: 400px;
+}
+
+/*CONTACT INFO*/
+footer .footer-container.contact-info p {
 	padding-left: 3px;
 	margin-bottom: 10px;
 	display: flex;
 	align-items: flex-start;
 }
-footer .container .left p i {
+footer .footer-container.contact-info p i {
 	color: #fff;
 	margin-right: 15px;
     width: 24px;
@@ -828,17 +840,13 @@ footer .container .left p i {
     justify-content: center;
     align-items: center;
 }
-footer .container .left p a {
+footer .footer-container.contact-info p a {
 	display: inline-block;
 }
-footer .container .left p a:hover {
+footer .footer-container.contact-info p a:hover {
 	color: #e7e7e7;
 }
-footer .container .left, 
-footer .container .right {
-	flex-basis: 50%;
-}
-footer .container .right p {
+footer .footer-container .links p {
 	margin: 10px 0px;
 }
 footer p {
@@ -846,8 +854,9 @@ footer p {
 	color: #fff;
 	clear: both;
 }
-footer .logo {
-	width: 400px;
+
+/*LINKS*/
+footer .footer-container.links {
 }
 footer .link-container {
 	overflow: hidden;
@@ -858,8 +867,10 @@ footer .link-container ul {
 	list-style: none;
 }
 footer .link-container ul {
-	display: flex;
 	margin-bottom: 0;
+}
+footer .link-container ul li {
+	margin-bottom: 5px;
 }
 footer .link-container a {
 	position: relative;
@@ -880,8 +891,12 @@ footer .link-container a:hover {
 	color: #e7e7e7;
 	text-decoration: none;
 }
+
+/*COPYRIGHT*/
+footer .footer-container.copyright {
+	width: 450px;
+}
 footer .copy-text {
-	margin-top: 30px;
 	margin-bottom: 0px;
 	color: #9b9b9b;
 }
@@ -1246,7 +1261,7 @@ section.client-centre {
 	margin-bottom: 10px;
 }
 .right .conveyancing-contact p.details {
-	color: #acacac;
+	color: #dbdbdb;
 }
 .right .conveyancing-contact:hover {
     box-shadow: -1px 2px 19px 0px rgb(0 0 0 / 20%);
@@ -1518,6 +1533,28 @@ section.client-centre {
 	    width: calc(100% - 80px);
     	font-size: 50px;
     }
+
+    /*FOOTER*/
+    footer .container {
+    	flex-wrap: wrap;
+    	justify-content: flex-start;
+    }
+    footer .footer-container.logo {
+    	flex-basis: 100%;
+    	margin-bottom: 20px;
+    }
+    footer .footer-container.copyright,
+    footer .footer-container.links {
+    	margin-left: 100px;
+    }
+}
+@media only screen and (max-width: 1200px){
+    /*FOOTER*/
+    footer .footer-container.copyright {
+    	flex-basis: 100%;
+    	margin-top: 20px;
+    	margin-left: 0px;
+    }
 }
 @media only screen and (max-width: 991px){
 	/*NAV*/
@@ -1528,14 +1565,14 @@ section.client-centre {
 		padding: 0px 40px 10px;
 	}
 	.mobile-nav .logo img,
-	footer .logo,
+	footer img.logo,
 	.navbar-brand img,
 	.navbar-brand {
 		height: auto;
 	}
 	.navbar .navbar-brand p {
 		bottom: -30px;
-	    left: 29px;
+	    left: 38px;
 	}
 
 	/*MOBILE NAV*/
@@ -1673,14 +1710,6 @@ section.client-centre {
 	footer .link-container p:first-of-type {
 		display: none;
 	}
-	footer .container .left,
-	footer .container .right {
-		flex-basis: auto;
-	}
-	footer .container .right {
-		padding-left: 3px;
-		margin-top: 20px;
-	}
 }
 @media only screen and (max-width: 767px){
 	/*GENERAL STYLES*/
@@ -1697,9 +1726,13 @@ section.client-centre {
 	}
 	.mobile-nav .logo img,
 	.navbar-brand img,
-	footer .logo,
+	footer img.logo,
 	.navbar-brand {
 		width: 300px;
+	}
+	.navbar .navbar-brand p {
+	    bottom: -30px;
+	    left: 29px;
 	}
 
 	/*MOBILE NAV*/
@@ -1825,11 +1858,23 @@ section.client-centre {
 	.hidden-forms .container.will-page {
 		height: 350px;
 	}
+	.hidden-forms .container.engagement-page {
+		height: 2000px;
+	}
 
 	/*FOOTER*/
 	footer {
 		padding: 20px 0px 0px;
 	}
+	footer .footer-container.copyright {
+    	margin-top: 5px;
+	}
+	footer .footer-container.links {
+		margin-left: 50px;
+	}
+    footer .footer-container.logo {
+    	margin-bottom: 5px;
+    }
 	footer .link-container {
 	    flex-wrap: wrap;
 	}
@@ -1843,22 +1888,12 @@ section.client-centre {
 	footer .container {
 	    padding: 40px 20px 15px;
 	}
-	footer .container .left,
-	footer .container .right {
-		flex-basis: 50%;
-	}
-	footer .container .left {
-		padding-bottom: 25px;
-	}
-	footer .copy-text {
-		margin-top: 15px;
-	}
 }
 @media only screen and (max-width: 479px){
 	/*NAV*/
 	.mobile-nav .logo img,
 	.navbar-brand img,
-	footer .logo,
+	footer img.logo,
 	.navbar-brand {
 		width: 275px;
 	}
@@ -1921,6 +1956,9 @@ section.client-centre {
 	.hidden-forms .container.conveyancing-page {
 		height: 1450px;
 	}
+	.hidden-forms .container.engagement-page {
+		height: 3300px;
+	}
 
 	/*CONTACT PAGE*/
 	.contact-form .contact-details .contact-item {
@@ -1934,14 +1972,14 @@ section.client-centre {
 	footer .container {
 	    padding: 40px 20px 0px;
 	}
-	footer .container .left, footer .container .right {
-    	flex-basis: 100%;
+	footer .footer-container {
+		flex-basis: 100%;
+	}
+	footer .footer-container.links {
+		margin-left: 0;
 	}
 	footer .link-container li {
     	flex-basis: 135px;
-	}
-	footer .copy-text {
-		margin-top: 30px;
 	}
 }
 /*LANDSCAPE FOR LARGE PHONES*/
