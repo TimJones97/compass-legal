@@ -219,8 +219,8 @@ function createScrollRevealEffects(){
 	ScrollReveal().reveal($('.service-boxes .service.two'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 	ScrollReveal().reveal($('.service-boxes .service.three'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
 	ScrollReveal().reveal($('.service-boxes .service.four'),  { delay: 600, afterReveal: removeScrollRevealStyles  });
-	ScrollReveal().reveal($('.service-boxes .service.five'),  { delay: 600, afterReveal: removeScrollRevealStyles  });
-	ScrollReveal().reveal($('.service-boxes .service.six'),  { delay: 600, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.five'),  { delay: 650, afterReveal: removeScrollRevealStyles  });
+	ScrollReveal().reveal($('.service-boxes .service.six'),  { delay: 700, afterReveal: removeScrollRevealStyles  });
 
 	// For the process steps
 	ScrollReveal().reveal($('.step.one'),  { delay: 400, afterReveal: removeScrollRevealStyles  });
