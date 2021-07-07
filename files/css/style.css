@@ -1596,12 +1596,6 @@ section.client-centre {
 	.parallax-window .hero-container .solid-btn {
 		margin-left: 40px;
 	}
-	.parallax-window .banner-text.animate-finish:hover span:nth-child(1), 
-	.parallax-window .banner-text.animate-finish:hover span:nth-child(3), 
-	.parallax-window .banner-text.animate-finish:hover span:nth-child(5), 
-	.parallax-window .banner-text.animate-finish:hover span:nth-child(7) {
-		color: #fff !important;
-	}
 	.hero.hero-sml, .hero.hero-sml .parallax-window {
 		height: 400px;
 	}
@@ -1917,9 +1911,7 @@ section.client-centre {
 	/*HERO*/
 	.parallax-window .banner-text {
 	    font-size: 35px;
-	}
-	.parallax-window .banner-text.animate span:nth-child(3) {
-		display: inline-block;
+	    margin-top: 40px;
 	}
 	.hero.hero-sml, .hero.hero-sml .parallax-window {
 		height: 350px;
