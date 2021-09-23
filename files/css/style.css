@@ -893,11 +893,27 @@ footer .footer-container.copyright {
 	width: 450px;
 }
 footer .copy-text {
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 	color: #9b9b9b;
 }
 footer .copy-text:last-of-type {
-	margin-top: 5px;
+	margin-bottom: 0;
+}
+footer .copy-text:last-of-type a {
+	position: relative;
+}
+footer .copy-text:last-of-type a:hover {
+	color: #fff;
+}
+footer .copy-text:last-of-type a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	height: 2px;
+	width: 100%;
+	border-bottom: 1px dotted #acacac;
+	opacity: 0.5;
 }
 /*Background video*/
 footer .footer-video__container,
