@@ -94,6 +94,7 @@ section {
 }
 .container {
 	max-width: 1080px;
+	min-width: 320px;
 	width: 100%;
 	margin: 0 auto;
 	padding: 40px 40px;
@@ -2031,5 +2032,39 @@ section.client-centre {
 	}
 	footer .footer-video__overlay {
 	    background: rgb(27 27 27 / 0.85);
+	}
+}
+@media only screen and (max-width: 360px){
+	/* NAV */
+	.mobile-nav .logo img, .navbar-brand img, footer img.logo, .navbar-brand {
+		width: 230px;
+	}
+	.navbar .navbar-brand p {
+		left: 23px;
+	}
+	.mobile-nav .logo p {
+		left: 23px;
+	}
+	/* HOME PAGE - CONTACT */
+	.contact-details {
+		padding: 25px 10px;
+	}
+	/* CLIENT CENTRE */
+	.client-centre .client-links .page {
+		padding: 20px;
+	}
+	.contact-form .contact-cards .contact-item .text-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: auto;
+		text-align: center;
+	}
+	.contact-form .contact-cards .contact-item {
+		padding: 0px 10px;
+	}
+	.contact-form .contact-cards .contact-item p.details {
+		padding-left: unset;
 	}
 }
